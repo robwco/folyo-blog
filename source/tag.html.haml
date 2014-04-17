@@ -1,0 +1,37 @@
+---
+pageable: true
+---
+
+- content_for(:title, "Articles tagged “#{tagname}” - Discover Meteor")
+
+.page-title
+  %h2
+    %a{:href => '/blog'} Discovering Meteor
+  %p 
+    Articles tagged
+    = surround '“', '”' do
+      %span.category=tagname
+      
+%section#blog
+  .blog-archive
+    .blog-articles
+      - page_articles.each_with_index.each do |post, i|
+        =partial("partials/summary", :locals=>{post:post})
+    - if num_pages > 1
+      .blog-pagination.small
+        .pagination-prev
+          - if prev_page
+            = link_to 'Newer Articles', prev_page
+        .pagination-next
+          - if next_page
+            = link_to 'Older Articles', next_page
+    .blog-sidebar
+      =partial("partials/sidebar")
+    - if num_pages > 1
+      .blog-pagination.medium
+        .pagination-prev
+          - if prev_page
+            = link_to 'Newer Articles', prev_page
+        .pagination-next
+          - if next_page
+            = link_to 'Older Articles', next_page

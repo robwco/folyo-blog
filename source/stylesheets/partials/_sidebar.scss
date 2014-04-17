@@ -1,0 +1,52 @@
+.sidebar{
+  // display: none;
+  @include large{
+  }
+
+  color: white(0.8);
+
+
+  margin: 0 30px;
+  float: left;
+  width: 240px;
+  text-align: center;
+  h2{
+    margin-bottom: 10px;
+    color:white;
+    background: rgba(7, 22, 32, 0.6);
+    border-radius: 50%;
+    padding: 30px;
+    width: 140px;
+    height: 140px;
+    margin: 0 auto 20px auto;
+    line-height: 1.3;
+    span{
+      display: block;
+    }
+    .s1{
+      font-size: 16px;
+    }
+    .s2{
+      font-size: 30px;
+      background: url("//assets1.folyo.me/assets/logo-white-41e8dee74424daa4600dbbe8f1222a56.png") 50% 50% no-repeat;
+      background-size: 100% auto;
+      text-indent: 100%;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+    .s3{
+      font-size: 16px;
+    }
+  }
+  .sidebar-intro{
+    line-height: 1.6;
+    font-size: 16px;
+    margin-bottom: 0;
+    padding: 10px 0;
+    border-top: 1px solid white(0.5);
+    border-bottom: 1px solid white(0.5);
+  }
+  a{
+    color: white;
+  }
+}

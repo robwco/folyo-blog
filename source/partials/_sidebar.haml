@@ -1,0 +1,57 @@
+.block.newsletter
+  %h3.blog-header Newsletter
+  %h3 Join Our Newsletter
+  %p And get the latest content first
+  =partial("partials/newsletter_form")
+/ .block
+/   %h3 Recommended
+.block.follow
+  %h3.blog-header Twitter
+  %p Follow us on Twitter for Meteor news and resources:
+  :plain
+    <a href="https://twitter.com/DiscoverMeteor" class="twitter-follow-button" data-show-count="false" data-dnt="true">Follow @DiscoverMeteor</a>
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+  :plain
+    <a class="twitter-timeline" data-dnt="true" href="https://twitter.com/DiscoverMeteor" data-widget-id="426987516005072896" data-chrome="nofooter noheader transparent" data-tweet-limit="3" data-link-color="#6e5eb2">Tweets by @DiscoverMeteor</a>
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>  
+.block
+  %h3.blog-header Google+
+  :plain
+    <div class="g-page" data-width="213" data-href="//plus.google.com/100625325678070603014" data-rel="publisher"></div>
+    <script type="text/javascript">
+      (function() {
+        var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+        po.src = 'https://apis.google.com/js/platform.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+      })();
+    </script>
+.block
+  %h3.blog-header Facebook
+  :plain
+    <iframe src="//www.facebook.com/plugins/likebox.php?href=http%3A%2F%2Fwww.facebook.com%2FDiscoverMeteor&amp;width=213&amp;height=258&amp;colorscheme=light&amp;show_faces=true&amp;header=false&amp;stream=false&amp;show_border=false&amp;appId=449721305061869" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:213px; height:258px;" allowTransparency="true"></iframe>
+.block.subscribe
+  %h3.blog-header RSS
+  %a.rss{:href => '/feed.xml'} Subscribe via RSS    
+.block.categories
+  %h3.blog-header Categories
+  %ul
+    - blog.tags.each do |tag|
+      %li
+        %a{:href => tag_path(tag[0])}=tag[0].pluralize    
+.block
+  %h3.blog-header Meteor Resources
+  %ul
+    %li
+      %a{:href => "http://eventedmind.com"} Evented Mind
+    %li
+      %a{:href => "http://meteorhacks.com/"} MeteorHacks
+    %li
+      %a{:href => "http://crater.io"} Crater.io
+    %li
+      %a{:href => "http://meteorhacks.com/meteor-weekly/"} Meteor Weekly
+    %li
+      %a{:href => "http://www.meteorpodcast.com"} The Meteor Podcast
+    %li
+      %a{:href => "http://differential.io/blog"} The Differential Blog
+    %li
+      %a{:href => "http://manuel-schoebel.com/blog"} Manuel Schoebel

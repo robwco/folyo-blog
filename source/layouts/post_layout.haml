@@ -1,0 +1,147 @@
+- content_for(:title, "#{current_article.title} - Discover Meteor")
+- content_for(:layout, "post")
+- content_for(:itemtype, "Article")
+
+- if current_article.data.author == "sacha"
+  - author = data.authors.fetch(0)
+- else
+  - author = data.authors.fetch(1)
+
+- wrap_layout :layout do
+  %section.post
+    .post-section
+
+      .top.post-top
+        %a.back{:href => '/'} Back to Blog
+        .meta
+          / .rss
+          /   %a{:href => '/feed.xml'} Subscribe (RSS)
+          / .twitter
+          /   :plain
+          /     <a href="https://twitter.com/share" class="twitter-share-button" data-via="DiscoverMeteor">Tweet</a>
+          /     <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+          %span.meta-date=current_article.date.strftime('%b %e %Y')
+          %span.meta-author
+            — by
+            = author.display_name
+          - if current_article.tags
+            in
+            - current_article.tags.each do |tag|
+              %a.meta-category.category{:href => tag_path(tag)}=tag.pluralize()
+              
+      / - if current_article.data.thumb
+      /   .featured-image
+      /     .entry-image
+      /       .thumb
+      /         / %img{:src => "/images/blog/"+current_article.data.thumb, :itemprop => "image"}
+      /         %img{:src => "/images/bg-blurred.jpg", :itemprop => "image"}
+      /       .credit Photo credit: <a target="_blank" href="">Something something via Flickr</a>
+
+      %h1.post-title{:itemprop => "name"}=current_article.data.title
+
+
+
+
+      .post-content
+        =find_and_preserve do
+          =yield
+    .post-share
+      %h4 Share this article:
+      .post-share-option.twitter
+        :plain
+          <a href="https://twitter.com/share" class="twitter-share-button" data-via="DiscoverMeteor">Tweet</a>
+          <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+      .post-share-option.gplus
+        :plain
+          <!-- Place this tag where you want the +1 button to render. -->
+          <div class="g-plusone" data-size="medium" data-annotation="inline" data-width="200"></div>
+
+          <!-- Place this tag after the last +1 button tag. -->
+          <script type="text/javascript">
+            (function() {
+              var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+              po.src = 'https://apis.google.com/js/platform.js';
+              var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+            })();
+          </script>
+      .post-share-option.facebook
+        :plain
+          <div id="fb-root"></div>
+          <script>(function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/fr_FR/all.js#xfbml=1&appId=449721305061869";
+            fjs.parentNode.insertBefore(js, fjs);
+          }(document, 'script', 'facebook-jssdk'));</script>
+        :plain
+          <div class="fb-like" data-width="200" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div>
+  .post-author
+    %h4.blog-header About the Author
+    %img.portrait{:src => "/images/#{author.avatar}"}
+    %p
+      =author.bio
+      You can find him on 
+      %a{:href => 'http://twitter.com/'+author.twitter} Twitter
+      and&nbsp;
+      %a{:href => author.gplus+'?rel=author'}> Google Plus
+      \.
+  .post-newsletter.newsletter.blog-newsletter
+    %h4.blog-header Free Stuff
+    %h2 Get Chapters 1 to 4 of <em>Discover Meteor</em> For Free
+    %p Leave us your email and you'll receive <strong>a free PDF</strong> containing the <strong>first four chapters</strong> of the book (<em>Introduction</em>, <em>Getting Started</em>, <em>Deployment</em>, and <em>Templates</em>) to help you get started learning Meteor!
+    .newsletter
+      %form{:action => "http://telesc.us2.list-manage.com/subscribe/post?u=b5af47765edbd2fc173dbf27a&amp;id=ed0fb4ac61", :method => "post", :name => "mc-embedded-subscribe-form", :novalidate => "", :target => "_blank"}
+        %input.email.text{:name => "EMAIL", :placeholder => "Your email", :type => "email"}
+        %input#landing{:type=>"hidden", :name=>"LANDING", :value=>"Discover Meteor"}
+        %input#origin{:type=>"hidden", :name=>"ORIGIN"}
+        %button.submit.button{:name => "subscribe", :type => "submit"} Get Free Chapters
+
+
+  .blog-featured
+    %h4.blog-header Read This Next
+    - featured_articles = blog.articles.select{|item| item.metadata[:page]["featured"] rescue false} # get all featured articles
+    - featured_articles = featured_articles.delete_if{|item| item == current_article} # remove the current article
+    - featured = featured_articles.sample() # pick one at random   
+    =partial("partials/summary", :locals=>{post:featured})
+
+  .blog-pagination
+    .pagination-prev
+      - prev_article = current_article.previous_article
+      - if prev_article
+        %h4.blog-header Previous Article
+        %a.prev{:href => "#{prev_article.url}", :title => "Previous Post: #{prev_article.title}"}
+          %span
+            «
+            =prev_article.title
+    .pagination-next
+      - next_article = current_article.next_article
+      - if next_article
+        %h4.blog-header Next Article
+        %a.next{:href => "#{next_article.url}", :title => "next Post: #{next_article.title}"}
+          %span
+            =next_article.title
+            »
+
+  - if ENV["SHOW_COMMENTS"]
+    .blog-comments
+      %h4.blog-header Comments
+      :plain
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'themeteorbook'; // required: replace example with your forum shortname
+            var disqus_identifier = '#{current_article.slug}';
+            function disqus_config() {
+                this.callbacks.onNewComment = [function() { 
+                  trackEvent('New Comment'); }];
+            }
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>   

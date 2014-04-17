@@ -1,0 +1,80 @@
+@include border-box-sizing;
+
+// at 47.5em (16*47.5=760px) switch to a 12-column layout
+$xsmall-break: 320px;
+$small-break: 47.5em;
+$medium-break: 985px;
+
+@mixin xsmall(){
+  @media screen and (max-width: $xsmall-break) {
+    @content;
+  }
+}
+@mixin small(){
+  @media screen and (min-width: $xsmall-break) and (max-width: $small-break) {
+    @content;
+  }
+}
+@mixin medium(){
+  @media screen and (min-width: $small-break) and (max-width: $medium-break) {
+    @content;
+  }
+}
+@mixin large(){
+  @media screen and (min-width: $medium-break) {
+    @content;
+  }
+}
+
+$total-columns  : 12;
+$column-width   : 20px;
+$gutter-width   : 60px;
+$grid-padding   : 0px;
+
+$bigspacing: 60px;
+$spacing: 40px;
+$pspacing: 30px;
+$halfspacing: 20px;
+$quarterspacing: 10px;
+
+.small{
+  @include medium{
+    display: none !important;
+  }
+}
+.medium{
+  @include small{
+    display: none !important;
+  }
+}
+
+// mobile
+
+html, body{
+  overflow: hidden;
+}
+
+.container{
+  // @include container;
+  // padding-right:50px;
+  @include small{
+    // padding:0 15px;
+    // overflow: hidden;
+  }
+  @include medium{
+    // padding:0 20px;
+  }
+}
+
+header, #sidebar{
+  display: none !important;
+}
+
+// desktop
+
+@include medium{
+  // section{
+  //   @include container;
+  //   padding:0;
+  // }
+}

@@ -1,0 +1,31 @@
+- content_for(:title, "Drafts - Discover Meteor")
+- content_for(:layout, "archives")
+
+.page-title
+  %h2.no-margin
+    %a{:href => '/blog'} Discovering Meteor
+  %p.intro Drafts
+.blog-archive
+  .blog-articles
+    %h4.blog-header Latest Drafts
+    - if drafts.any?
+      - drafts.each do |post|
+        %article.block.blog-summary
+          .post-thumbnail
+            %a{:href => post.url}
+              - if post.data.thumb
+                %img.thumb{:src => "/images/blog/"+post.data.thumb}
+              - else
+                %span.thumb.default-thumb
+          .summary
+            %p.meta
+              %span.date=post.date.strftime('%b %e %Y')
+              - if post.tags[0]
+                %span in
+                %a.category{:href => tag_path(post.tags[0])}=post.tags[0].pluralize()
+            %h3
+              %a{:href => post.url}
+                =post.title
+            %p.summary-content
+              /=Sanitize.clean(post.summary(140), Sanitize::Config::RESTRICTED)
+              %a{:href => post.url} → Read more

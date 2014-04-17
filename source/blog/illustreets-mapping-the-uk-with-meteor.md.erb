@@ -1,0 +1,128 @@
+---
+title: "Illustreets: Mapping the UK with Meteor"
+author: sacha
+published: true
+date: 2013/11/3
+thumb: illustreets.jpg
+tags: Case Study
+featured: true
+---
+
+A few days ago, we received this email from one of our readers:
+
+> I am a Meteor fan, and a reader (better said, learner) of your book. In February 2013 I started a project, which soon I ported completely to Meteor, despite this amazing framework being very young at that time. It was a bit of a challenge to get my head around it, but thanks to your book I learned to master it in days. <cite>–&nbsp;Manuel&nbsp;Timita</cite>
+
+
+
+
+We're of course always very happy when somebody tells us about how our book helped them build something cool with Meteor. But when [Manuel](http://timita.org/wordpress/) showed us [Illustreets](http://illustreets.co.uk/), we weren't just happy, we were blown away!
+
+Illustreets is without a doubt one of the most impressive Meteor projects we've seen, so we wanted to know more. Happily, Manuel was nice enough to answer a few questions about the process behind Illustreets, as well as his perspective on Meteor as an experienced back-end developer. 
+
+<% note do %>
+*Note: this post is part of our series highlighting our readers' projects (previously: [Scoutzie](https://www.discovermeteor.com/2013/10/15/meteor-enterprise-scoutzie-dashboard/), [Mindmeld](https://www.discovermeteor.com/2013/07/25/mindmeld-issue-tracker/)). If you've built something cool with Meteor and you'd like to be featured as well, feel free to [get in touch](http://discovermeteor.wufoo.com/forms/get-in-touch/)!*
+<% end %>
+
+**Sacha: To get things started, can you introduce Illustreets?**
+
+<%= figure "blog/manuel.jpg", "Manuel Timita", "portrait" %>
+
+**Manuel:** Illustreets is a property location research tool for the UK. It helps those looking to move home find the best places where they can buy or rent a house. To achieve this, we have compiled a few million records of governmental open data, such as deprivation, recorded crime, education and schools, public transport, and census statistics. 
+
+We then took all this data and put it on a map with dynamic data layers which the users can freely search, hover over, click on, and filter by various criteria. 
+
+<%= figure "blog/illustreets1.jpg", "Illustreets", "", "http://illustreets.co.uk/" %>
+
+**What has been the response to the project?**
+
+<%= pullquote "The reaction has been nothing short of extraordinary", "right" %>
+
+We launched Illustreets in mid-September. The reaction which we have seen since has been nothing short of extraordinary. We owe our thanks to the data professionals, property specialists, academics, mapping geeks, journalists, and enthusiastic users who have been praising it and spreading the word about it on Twitter and Facebook. In just a month we received over 6,000 unique visitors.
+
+
+We have also been featured recently in a case study of innovative uses of governmental open data by the Cabinet Office Transparency Team.
+
+<%= figure "blog/illustreetsgov.jpg", "Illustreets was featured on the UK government's site.", "", "https://www.gov.uk/government/case-studies/open-data-visualising-your-neighbourhood-with-illustreets" %>
+
+**How did you discover Meteor? Is this your first Meteor project?**
+
+First of all, I am not a front-end developer (well, not until now, I guess), so I had no experience of JavaScript. But as we rely a lot on APIs, and because I wanted to offer first-hand user experience, I had to make the switch to this brilliant language, whilst thinking of reserving PHP exclusively for proxying the API calls. 
+
+Yet, shortly after I started developing Illustreets I realised that the code base was simply getting out of control. Naturally, I started looking for a framework that would help me consolidate everything in one place, including the server part if possible.
+
+For a weekend I went through a crash course in Backbone.js, Spine, Angular, and – by sheer accident (read: luck) – Meteor JS. I think I found out about the latter whilst reading an article written by somebody in the Knockout team, who was [comparing all the JS frameworks](http://blog.stevensanderson.com/2012/08/01/rich-javascript-applications-the-seven-frameworks-throne-of-js-2012/) in existence.
+
+<%= figure "blog/throneofjs.jpg", "Throne of JS: a comparison of 7 JavaScript frameworks", "", "http://blog.stevensanderson.com/2012/08/01/rich-javascript-applications-the-seven-frameworks-throne-of-js-2012/" %>
+
+Whilst all of the other frameworks above are absolutely amazing, none of them was offering what the little known Meteor was supporting out of the box: JavaScript on both front-end and backend, and full reactivity. To be sincere, I fell in love right away with it after watching the screencasts and playing with the examples. 
+
+<%= pullquote "I fell in love right away", "left" %>
+
+I think that at that time Meteor was at version 0.5, and I was a bit wary that it may give me too much trouble later. Nevertheless I took the plunge, and to be honest, the fact that a book about it – yours – was just about to be published, together with the fact that the activity on Stack Overflow was growing, gave me the confidence that I wasn't on my own and that I would be able to find answers to my questions.
+
+**Did you try other frameworks or languages before using Meteor? Was it easy to make the switch?**
+
+<%= pullquote "Meteor’s benefits were crazily easy to grasp", "right" %>
+
+I tried the three frameworks mentioned above. By all means, I can’t say that I know them, but one thing is for sure: for a beginner such as me, Meteor’s benefits were crazily easy to grasp by comparison: 
+
+- Write your code in one language, run it on either side of the server.
+- Any update that I want to make real-time is actually real-time. No callbacks, no event listeners required for that.
+- Useful libraries added with a simple command.
+- Template solution out of the box.
+- No complicated folder structure.
+- Deploy without headaches in one command line. 
+
+**What were the hardest concepts to learn with Meteor? Did the book help?**
+
+I wanted Illustreets to be a multi-page app – of course, by emulating the pages via templates. One of the reasons for which I was eagerly awaiting for your book to be published (I think I started with Meteor about three weeks before that), was that I didn’t know exactly how routing and reactivity could be made to work together. I was hoping that the book would cover that.
+
+<%= pullquote "It was very easy to adapt what I learned from Discover Meteor", "left" %>
+
+When I finally got my hands on it, amongst other things, I found out how to map URLs to templates and also figured out how to use a template as a page controller in order to emulate multiple pages. Although I prefer to use Backbone’s router for Illustreets, it was very easy to adapt to it what I learned from Discover Meteor. Sweet!
+
+**Was it hard to integrate a map with Meteor? Any tips?**
+
+Well, at the beginning I encountered a series of difficulties. Some of them were related to the fact that template rendering was killing the map. Putting the map’s div inside a `{{#constant}}` block was not helping, which I assume it was because the div’s width and height were set relative to its parent, and the parent – the page controller template, in effect – was a region which needed to be re-rendered all the time.
+
+<%= figure "blog/illustreets2.jpg", "Mapping the UK" %>
+
+A solution that I found at the time was to put the map element inside a template, set a session variable that would hold the map options and objects at any given moment (such as markers, zoom level, centre, etc.), set another session variable (i.e. `mapIsOn`) that would return a Boolean value depending on whether the map template was rendered or not, and then declare a function for creating the map which would be called every time the template was rendered. 
+
+Various functionalities that were needed once the map becomes available were placed inside a `Deps.autorun` function, which would be called every time the `mapIsOn` session variable changes.
+
+Of course, this is not a perfect solution, and with time I refined the procedure, but it is a good starting point if one wants to add a map, and also keep a record of its state and that of any objects displayed on it (such as markers).
+
+**Where does your data come from? Are you using many external services?**
+
+Illustreets uses data from a variety of sources, most of it from UK governmental institutions and openly accessible by anyone: Ordnance Survey, the Department for Education, Ofsted, Office for National Statistics, Police.uk, and the Environment Agency. 
+
+<%= figure "blog/illustreets3.jpg", "Illustreets' data" %>
+
+Most of this data is available via an amazing initiative: [Data.gov.uk](http://data.gov.uk/). The asking price data, extremely reliable and also freely available, comes from [Nestoria.co.uk](http://www.nestoria.co.uk/).
+
+In terms of APIs that we use, I would list the three most dependable: 
+
+- CartoDB, which is exactly what web mapping is going to be in a few years’ time. These guys are well ahead.
+- Google Maps, for its unmatched geocoding capabilities, imagery, and directions service.
+- Nestoria, whose speed and reliability in delivering property data is fantastic.
+
+<%= figure "blog/cartodb.jpg", "CartoDB", "", "http://cartodb.com" %>
+
+**Did you encounter any other stumbling blocks or technical challenges?**
+
+To be honest, there have been many, but none of them insurmountable. Also, funnily enough, I didn’t encounter many problems related to Meteor. I’m amazed at how easy it is to work with this framework if you have the right guidance.
+
+**Are there any missing Meteor features you wished you had to build this app?**
+
+Yes, but it’s more a matter of taste. With Illustreets, I still need to manipulate the DOM a lot, and I find jQuery a huge time saver in that respect. But I wish Meteor had better support out of the box for such things, especially when it is about animations.
+
+**Is the app open-source? Or do you have plans to open-source parts of it?**
+
+We benefited a lot from Open Source software. Actually, almost everything that we used in this app is OS. Thus it feels a bit weird that I have to say that we are not planning yet to open Illustreets’ source. 
+
+However, this possibility is not completely out of question; we might just do it one day. For now, I think that we can contribute better if we become profitable, and then support financially some of the free software which we use in our work and on which we depend so much every day.
+
+---
+
+*Thanks to Manuel for taking the time to answer our questions! And if you'd like to learn more about Meteor and keep up with the blog, be sure to sign up for our newsletter just below.*

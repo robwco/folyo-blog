@@ -1,0 +1,173 @@
+.category-roundtables, .category-case-studies{
+	blockquote{
+		position:relative;
+		font-style:normal;
+		background:none;
+		margin-bottom:30px;
+		padding:0px 0 0px 100px;
+		// border-bottom:1px dotted $lightest-text;
+		// border-top:1px dotted $lightest-text;
+		overflow:visible;
+		p{
+			background:#e3eaee;
+			background:#fff;
+			padding:15px 25px;
+			font-size:14px;
+			line-height:2;
+			// @include border-radius(3px);
+			position: relative;
+			margin-bottom:0;
+			@include box-shadow(0 1px 2px black(0.25));
+			&:first-child{
+				@include border-top-left-radius(3px);
+				@include border-top-right-radius(3px);
+			}
+			&:last-child{
+				@include border-bottom-left-radius(3px);
+				@include border-bottom-right-radius(3px);
+			}
+			&:first-child:after {
+				right: 100%;
+				border: solid transparent;
+				content: " ";
+				height: 0;
+				width: 0;
+				position: absolute;
+				pointer-events: none;
+				border-right-color: #fff;
+				border-width: 10px;
+				top: 30px;
+				margin-top: -10px;
+			}
+			&:first-child:before {
+				right: 100%;
+				border: solid transparent;
+				content: " ";
+				height: 0;
+				width: 0;
+				position: absolute;
+				pointer-events: none;
+				border-right-color: black(0.06);
+				border-width: 10px;
+				top: 32px;
+				margin-top: -10px;
+			}
+		}
+		p+p{
+			padding-top:0;
+		}
+		&:before{
+			background:#ddd no-repeat top left;
+			height:60px;
+			width:60px;
+			@include border-radius(50px);
+			position:absolute;
+			top:0px;
+			left:0;
+			content:" ";
+			display:block;
+			font-size:14px;
+		}
+		&:after{
+			position:absolute;
+			top:70px;
+			left:0;
+			width:100px;
+			left:-20px;
+			text-align:center;
+			display:block;
+			font-size:14px;
+			color:$light-text;
+		}
+		&.sacha-g{
+			&:before{
+				background-image:url("../images/sacha-greif-avatar.jpg");
+			}
+			&:after{
+				content:"Sacha G.";
+			}
+		}
+		&.aymeric-g{
+			&:before{
+				background-image:url("../images/aymeric-g-avatar.jpg");
+			}
+			&:after{
+				content:"Aymeric G.";
+			}
+		}
+		&.jose-m{
+			&:before{
+				background-image:url("../images/jose-m-avatar.jpg");
+			}
+			&:after{
+				content:"Jose M.";
+			}
+		}
+		&.paddy{
+			&:before{
+				background-image:url("../images/paddy-avatar.jpg");
+			}
+			&:after{
+				content:"Paddy";
+			}
+		}
+		&.rachel{
+			&:before{
+				background-image:url("../images/rachel-avatar.jpg");
+			}
+			&:after{
+				content:"Rachel";
+			}
+		}	
+		&.jonathan{
+			&:before{
+				background-image:url("../images/jonathan-avatar.jpg");
+			}
+			&:after{
+				content:"Jonathan";
+			}
+		}
+		&.neil{
+			&:before{
+				background-image:url("../images/neil-avatar.jpg");
+			}
+			&:after{
+				content:"Neil";
+			}		
+		}
+		&.gillis{
+			&:before{
+				background-image:url("../images/gillis-avatar.jpg");
+			}
+			&:after{
+				content:"Chris";
+			}
+		}
+		&.akshay{
+			&:before{
+				background-image:url("../images/akshay-avatar.jpg");
+			}
+			&:after{
+				content:"Akshay";
+			}		
+		}
+		&.ajay{
+			&:before{
+				background-image:url("../images/ajay-avatar.jpg");
+			}
+			&:after{
+				content:"Ajay";
+			}		
+		}	
+	}
+	blockquote+blockquote{
+		border-top:none;
+		padding-top:0px;
+		&:before{
+			top:0px;
+		}
+		&:after{
+			top:70px;
+		}
+	}
+}

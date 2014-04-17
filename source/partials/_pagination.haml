@@ -1,0 +1,7 @@
+.blog-pagination{:class => pagination_class}
+  .pagination-prev
+    - if prev_page
+      = link_to '<span>« Newer Articles</span>', prev_page
+  .pagination-next
+    - if next_page
+      = link_to '<span>Older Articles »</span>', next_page

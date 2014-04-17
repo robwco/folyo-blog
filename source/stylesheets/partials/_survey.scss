@@ -1,0 +1,204 @@
+.form-panel fieldset:before{
+	height:250px;
+	width:560px;
+	content:" ";
+	display:block;
+	margin-bottom:20px;
+	background:url(../images/quiz1.jpg) no-repeat;
+}
+#panel2 fieldset:before{
+	background-image:url(../images/quiz2.jpg);
+}
+#panel3 fieldset:before{
+	background-image:url(../images/quiz3.jpg);
+}
+#panel4 fieldset:before{
+	background-image:url(../images/quiz4.jpg);
+}
+#panel5 fieldset:before{
+	background-image:url(../images/quiz5.jpg);
+}
+#panel6 fieldset:before{
+	background-image:url(../images/quiz6.jpg);
+}
+#panel7 fieldset:before{
+	background-image:url(../images/quiz7.jpg);
+}
+#panel8 fieldset:before{
+	background-image:url(../images/quiz8.jpg);
+}
+#panel9 fieldset:before{
+	background-image:url(../images/quiz9.jpg);
+}
+#panel10 fieldset:before{
+	background-image:url(../images/quiz10.jpg);
+}
+#wpss_survey{
+	.form-container{
+		#progress{
+			@include box-emboss(1,0.15);
+			background:black(0.07);
+			margin-bottom:20px;
+			border:0;
+			label, p{
+				line-height:35px;
+				font-size:13px;
+				vertical-align:middle;
+				font-weight:bold;
+				padding:0 10px;
+				margin:0;
+			}
+			.ui-progressbar-value{
+				@include background-image(linear-gradient(#59aad1, #3680a3));
+				border:none;
+				margin:0;
+			}
+		}
+		.form-panel{
+			background:white;
+			@include box-shadow(0 1px 2px black(0.25));
+			@include border-radius(3px);
+			padding:20px;
+			@include cf;
+			margin-bottom:20px;
+		}
+		#submitButton{
+			float:right;
+		}
+		#thanks{
+			h3{
+				background:none;
+				padding:0;
+			}
+			#submitButton{
+				@include button;
+			}
+		}
+	}
+}
+.result{
+	background:white;
+	@include box-shadow(0 1px 2px black(0.25));
+	@include border-radius(3px);
+	padding:20px;
+	margin-bottom:20px;
+	.score{
+		@include cf;
+		padding:20px;
+		margin-bottom:20px;
+		background:$lightgrey2;
+		.scored{
+			float:left;
+			p{
+				margin-bottom:3px;
+			}
+			h4{
+				font-size:36px;
+				margin-bottom:0;
+				span{
+					font-size:18px;
+				}
+			}
+		}
+		.share{
+			float:right;
+			p{
+				margin-bottom:10px;
+				font-size:12px;
+				text-align:center;
+			}
+			.tweet{
+				padding:0 10px;
+			}
+		}
+	}
+	
+}
+/* WPSS Super-Container 
+-----------------------------------------------------------*/
+#wpss_survey {
+  color: #333;
+}
+#wpss_survey h2{
+	display:none;
+}
+
+/* Quiz Component Contaner */
+#wpss_survey .form-container { 
+}
+
+#wpss_survey .form-panel fieldset{ 
+  margin: auto; 
+}
+
+/* Progress bar text */
+#wpss_survey p.pgress{ 
+  float:left; 
+}
+#wpss_survey label#amount { 
+  float:right; 
+}
+
+/* Question */
+#wpss_survey p.form_question{
+  text-align:left;
+  margin-bottom:20px;
+  border-bottom:1px solid black(0.1);
+  padding-bottom:20px;
+}
+
+/* Radio Set of Answers*/
+#wpss_survey .answer{
+}
+
+/* Label - Answers, Answer set Style */
+#wpss_survey .form-panel label { 
+/* width:415px; */
+/*  float:right;*/
+  padding:0;margin: 0px;
+  color:#333;
+  font-size:14px;
+}
+/* radio and checkbox input */
+#wpss_survey .wpss_radio{
+/*  width:25px;*/
+  
+  padding:0;margin: 0px;
+  margin-right:10px;
+}
+#wpss_survey .answer .answer_text{
+  margin-bottom:15px;
+}
+#wpss_survey .clear {
+  clear: both;
+  font-size: 1px;
+  height: 0;
+}
+
+
+/** 
+  *  Defualt form image assumes centered, you can override specific questions with:
+  *  #wpss_survey #panel{N} fieldset img{} or include style inline to image
+ */
+#wpss_survey .form-panel fieldset img{
+  max-width:95%;
+  padding:0;
+  margin:5px;
+}
+
+
+
+/* Custom Field Inputs */
+#wpss_survey .form-panel input, #wpss_survey .form-panel textarea { 
+/*  vertical-align: middle;
+  margin: 0px;
+  padding: 0px; */
+
+}
+#wpss_survey .form-panel radio{
+  -webkit-appearance: radio;
+  -webkit-box-sizing: border-box;
+}
+
+
+#wpss_survey .form-container button { float:right; margin-left:5px; }

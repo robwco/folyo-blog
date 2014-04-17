@@ -1,0 +1,299 @@
+.top{
+  font-size: 14px;
+  // background: $super-light-bg;
+  // padding:6px 20px;
+  padding-bottom: 10px;
+  border-bottom:1px dotted #ccc;
+  // border-top:1px solid $light-border;
+  margin-bottom:30px;
+  line-height: 26px;
+  @include cf;
+  .back{
+    display:block;
+    @include small{
+      text-align: center;
+      margin-bottom: $quarterspacing;
+    }
+    @include large{
+      float:left;
+      position: relative;
+      top: 2px;
+    }
+  }
+  .meta{
+    @include small{
+      text-align: center;
+    }
+    @include large{
+      float:right;
+    }
+  }
+  .rss, .github{
+    display:inline-block;
+    margin-right:20px;
+  }
+  .twitter{
+    position: relative;
+    top: 5px;
+    display:inline-block;
+    iframe{
+      width:90px !important;
+      margin: 0;
+    }
+  }
+  .meta-date{
+    font-variant: small-caps;
+    letter-spacing: 1px;
+  }
+  .meta-author{
+    font-style: italic;
+    color: $light-text;
+  }
+}
+
+.post-section{
+  h1{
+    font-size: 36px;
+  } 
+  .post-thumbnail{
+    float: none;
+    margin: 0 auto;
+    max-height: 250px;
+    max-width: 250px;
+    display: block;
+    margin-bottom: 60px;
+  }
+}
+.post{
+  padding-bottom: $bigspacing;
+  margin-bottom: 0;
+}
+.post-content{
+  @include medium{
+    padding: 0 60px;
+  }
+  p, h2, h3, h4, ul, ol, hr, blockquote, pre, .highlight{
+    @include small{
+      margin-bottom: $halfspacing;
+    }
+    @include medium{
+      margin-bottom: $pspacing;
+    }
+  }
+  >p:first-child{
+    @include small{
+      font-size: 20px;
+    }
+    @include medium{
+      font-size: 24px;
+    }
+  }
+  padding-bottom:40px;
+
+  h3{
+    @include small{
+      font-size: 24px;
+      line-height: 1.5;
+    }
+    @include medium{
+      font-size: 30px;
+      line-height: 1.8;
+    }
+    border-bottom: 1px dotted $medium-bg;
+  }
+  h2, h3{
+    strong a{
+      font-size: 16px;
+    }
+  } 
+  hr{
+    margin-bottom:30px;
+    border-bottom: 1px dotted $medium-bg;
+    border-top:0;
+  }
+  h5{
+    display:inline-block;
+    background:lighten($light-bg, 6%);
+    text-transform:uppercase;
+    @include border-radius(3px);
+    padding:3px 6px;
+    font-size:14px;
+    font-weight:normal;
+  }
+  .pullcenter{
+    width:50%;
+    margin:0 auto 40px auto;
+    cursor:pointer;
+    img{
+      border:0;
+    }
+    figcaption{
+      font-style:italic;
+      font-size:14px;
+      border-top:1px solid $light-bg;
+      padding-top:10px;
+      margin-top:10px;
+      color:$light-text;
+      margin-bottom:20px;
+    }
+  }
+  .video, iframe{
+    margin-bottom:40px;
+  }
+  blockquote{
+    padding: 20px 40px;
+    border-top: 1px solid $light-border;
+    border-bottom: 1px solid $light-border;
+    font-style: italic;
+    &.pull{
+      padding: 20px 0;
+    }
+    p:last-child{
+      margin: 0;
+    }
+    cite{
+      display: block;
+      text-align: right;
+      margin-top:5px;
+      font-weight: bold;
+    }
+  }
+  li{
+    ul{
+      padding-top: $quarterspacing;
+    }
+  }
+
+}
+.post-share{
+  @include small{
+    margin-bottom: $spacing;
+  }
+  @include medium{
+    margin:0 60px $spacing 60px;
+  }
+  padding: 10px;
+  background: $super-light-bg;
+  h4{
+    display: inline-block;
+    margin: 0;
+  }
+  .post-share-option{
+    display: inline-block;
+    position: relative;
+    &.twitter{
+      top:4px;
+      margin-left: 30px;
+    }
+    &.gplus{
+      top:4px;
+    }
+  }
+}
+.post-author{
+  position: relative;
+  border-bottom: 1px dotted $medium-bg;
+  @include small{
+    padding: $spacing 0;
+  }
+  @include medium{
+    padding:$spacing 60px;
+  }
+  // background:$super-light-bg;
+  // margin-bottom:60px;
+  @include cf;
+  h3, h4{
+    margin-bottom:5px;
+  }
+  .portrait{
+    @include border-radius(100px);
+    height:100px;
+    width:100px;
+    float:left;
+    display:block;
+    @include small{
+      margin: 0 $halfspacing $halfspacing 0;
+    }
+    @include medium{
+      margin-right: $spacing;
+    }
+  }
+  p{
+    margin: 0;
+  }
+}
+/*.post-nav{
+  @include cf;
+  font-size: 16px;
+  .prev{
+    display:block;
+    float:left;
+  }
+  .next{
+    display:block;
+    float:right;
+  }
+}*/
+.note{
+  background:$light-yellow;
+  @include background(linear-gradient( 125deg, rgba(253,228,0,0.2) 0%, rgba(253,228,0,0.1) 90%));
+  padding:30px;
+  margin-bottom:30px;
+  line-height:1.6;
+  p{
+    margin-bottom:20px;
+  }
+  h3{
+    margin:0 0 10px 0;
+    border:0;
+    font-size:20px;
+  }
+  ul{
+    margin:0;
+  }
+  &.chapter{
+    background:$light-bg;
+    @include background(linear-gradient( 125deg, rgba(226,224,233,1) 0%, rgba(226,224,233,0.5) 90%));;
+  }
+  p:last-child{
+    margin-bottom:0;
+  }
+}
+.blurb{
+  // color: $light-text;
+  margin-bottom: 60px;
+  background: $light-bg;
+  padding: 12px;
+  @include cf;
+  h4{
+    float: left;
+    margin: 0;
+    width: 60px;
+    text-transform: uppercase;
+    line-height: 45px;
+  }
+  p{
+    margin: 0 0 0 70px;
+    font-style: italic;
+    font-size: 16px;
+  }
+}
+.category{
+  text-transform: uppercase;
+}
+.post-newsletter{
+  background:$light-yellow;
+  @include background(linear-gradient( 125deg, rgba(253,228,0,0.2) 0%, rgba(253,228,0,0.1) 90%));
+  border-bottom: 1px dotted $medium-bg;
+  @include small{
+    padding: $pspacing $halfspacing;
+  }
+  @include medium{
+    padding: 60px;
+  }
+  position: relative;
+}
+.blog-comments{
+  padding-top:60px;
+  position: relative;
+}
