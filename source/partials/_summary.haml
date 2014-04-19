@@ -1,19 +1,15 @@
 %article.block.blog-summary
-  .post-thumbnail
-    %a{:href => post.url}
-      - if post.data.thumb
-        %img.thumb{:src => "/images/blog/"+post.data.thumb}
-      - else
-        %span.thumb.default-thumb
-  .summary
-    %p.meta
-      %span.date=post.date.strftime('%b %e %Y')
-      - if post.tags[0]
-        %span in
-        %a.category{:href => tag_path(post.tags[0])}=post.tags[0].pluralize()
-    %h3
-      %a{:href => post.url}
-        =post.title
-    %p.summary-content
-      =Sanitize.clean(post.summary(140), Sanitize::Config::RESTRICTED)
-      %a{:href => post.url} → Read more
+  .post-summary
+    = partial("partials/meta", :locals => {post: post})
+
+    - if post.data.thumb
+      .post-thumbnail
+        %a{:href => post.url}
+          %img.thumb{:src => "/images/blog/"+post.data.thumb}
+    .post-content
+      %h3.post-title
+        %a{:href => post.url}
+          =post.title
+      %p.post-excerpt
+        =Sanitize.clean(post.summary(100), Sanitize::Config::RESTRICTED)
+        %a{:href => post.url} → Read more

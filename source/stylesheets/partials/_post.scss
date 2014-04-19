@@ -8,49 +8,7 @@
 	padding-right:10px;
 	margin-right:10px;
 }
-.entry-image, .wp-caption{
-	padding:15px 15px 10px 15px;
-	background:white;
-	margin-bottom:10px;
-	@include box-shadow(0 1px 3px black(0.35));
-	position:relative;
-	width:auto !important;
-	img{
-		display:block;
-		width:100%;
-		height:auto;
-	}
-	.wp-caption-text{
-		text-align:center;
-		margin:0;
-		padding-top:15px;
-		color:$lighter-text;
-		font-size:16px;
-	}
-	.credit{
-		margin-top:7px;
-		a{
-			color:$light-text;
-		}
-	}
-	&:before,&:after{
-		position:absolute;
-		content:"";
-		height:110px;
-		width:110px;
-		z-index:10;
-	}
-	&:before{
-		background:url("../images/tape1.png");
-		top:-25px;
-		right:-31px;
-	}
-	&:after{
-		background:url("../images/tape2.png");
-		bottom:-25px;
-		left:-31px;
-	}
-}
+
 
 
 .entry-follow{

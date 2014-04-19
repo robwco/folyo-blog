@@ -6,8 +6,9 @@
 body{
 }
 .container{
-	padding-top:80px;
-
+	position: relative;
+	top:80px;
+	padding-bottom: 120px;
 }
 /*-------------- navigation ---------------*/
 header{
@@ -62,10 +63,12 @@ header{
 
 @-webkit-keyframes show-content {
   0% {
-    transform: rotate(-12deg);
+    transform: rotate(-4deg);
+    left: -600px;
   }
   100% {
   	transform: rotate(0deg);
+  	left: 0px;
   }
 }
 @-webkit-keyframes slide-photos {
@@ -76,9 +79,10 @@ header{
   	background-position: 0px;
   }
 }
-#content{
+.main{
   -webkit-animation: show-content 600ms ease-out;	
 	background:url("../images/content-bg-middle.png") repeat-y top right;
+	margin-bottom: 120px;
 	@include xsmall{
 		background-position: 90%;
 	}

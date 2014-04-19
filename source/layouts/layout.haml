@@ -41,19 +41,17 @@
 
   %body{:class => body_class, :itemscope => '', :itemtype => "http://schema.org/"+itemtype}
     .background
-    / %a{:class=>"back-to-home", :href=>"/"} Back to blog home    
+
+    = yield_content(:back)
 
     .container.clearfix
-      =partial("partials/header")
-      %section#content.main
+
+
+      .main#content
         .inner
           =yield
-      .sidebar
-        %h2
-          %span.s1 the
-          %span.s2 Folyo 
-          %span.s3 notebook
-        %h4.sidebar-intro <a href="http://folyo.me">Folyo</a> helps you find the best freelance designers for your project. This is our blog. 
+      =partial("partials/sidebar")
+
     %script{:src => "/javascripts/script.js"}
 
     :javascript

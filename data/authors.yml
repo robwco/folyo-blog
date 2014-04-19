@@ -4,10 +4,8 @@
   gplus: "https://plus.google.com/+SachaGreif/"
   avatar: "sacha-photo.jpg"
   bio: |
-    <a href="http://sachagreif.com">Sacha Greif</a> is a product and web designer who
-    has worked with companies such as <a href="http://hipmunk.com">Hipmunk</a> 
-    and <a href="http://www.lemonde.fr/">Le Monde</a>. 
-    He now works on open-source Meteor app <a href="http://telesc.pe">Telescope</a>, 
+    In addition to working on Folyo, <a href="http://sachagreif.com">Sacha Greif</a> also hacks on 
+    open-source app <a href="http://telesc.pe">Telescope</a>, 
     and <a href="http://sidebar.io">Sidebar</a>, a design newsletter.
 - tom:
   display_name: "Tom Coleman"

@@ -1,9 +1,15 @@
 ---
 title: The Folyo Blog
-page: home
+page: blog
+pageable: true
 ---
 
-- content_for(:title, current_page.data.title)
-- content_for(:layout, 'home')
+- content_for(:title, "The Folyo Blog")
+- content_for(:layout, "archives")
 
-=partial("partials/dummy")
+.blog-archive
+  .blog-articles
+    - page_articles.each do |post|
+      =partial("partials/summary", :locals=>{post:post})
+  =partial("partials/pagination", :locals =>{prev_page: prev_page, next_page: next_page, pagination_class: 'small'})
+

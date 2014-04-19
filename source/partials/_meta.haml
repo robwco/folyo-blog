@@ -1,0 +1,21 @@
+- if post.data.author == "sacha"
+  - author = data.authors.fetch(0)
+- else
+  - author = data.authors.fetch(1)
+
+.post-meta
+  / .rss
+  /   %a{:href => '/feed.xml'} Subscribe (RSS)
+  / .twitter
+  /   :plain
+  /     <a href="https://twitter.com/share" class="twitter-share-button" data-via="DiscoverMeteor">Tweet</a>
+  /     <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+  .meta-date=post.date.strftime('%b %e %Y')
+  .meta-byline
+    by
+    %span.meta-author
+      = author.display_name
+    - if post.tags
+      in
+      - post.tags.each do |tag|
+        %a.meta-category.category{:href => tag_path(tag)}=tag.pluralize()
