@@ -1,13 +1,13 @@
 .sidebar
-  .block
-    %h2.sidebar-title
+  %h2.sidebar-title.sidebar-block
+    %a{:href => "/"}
       %span.s1 the
       %span.s2 Folyo 
       %span.s3 notebook
-    %h4.sidebar-intro <a href="http://folyo.me">Folyo</a> helps you find the best freelance designers for your project. This is our blog. 
-  .block.newsletter
-    %h3 Join Our Newsletter
-    %p Tips and advice on design
+  .sidebar-intro.sidebar-block <a href="http://folyo.me">Folyo</a> helps you find the best freelance designers for your project. 
+  .sidebar-block.newsletter
+    %h4.newsletter-title Join Our Newsletter
+    %p.newsletter-intro Receive weekly tips and advice on design
 
     =partial("partials/newsletter_form")
 

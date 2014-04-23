@@ -9,6 +9,9 @@ body{
 	position: relative;
 	top:80px;
 	padding-bottom: 120px;
+	@include medium{
+		margin-right: 300px;
+	}
 }
 /*-------------- navigation ---------------*/
 header{
@@ -86,7 +89,9 @@ header{
 	@include xsmall{
 		background-position: 90%;
 	}
+
 	max-width:920px;
+
 	width: 100%;
 	min-height:1400px;
 	float:left;

@@ -1,26 +1,34 @@
 @include border-box-sizing;
 
-// at 47.5em (16*47.5=760px) switch to a 12-column layout
+// at 47.5em (18*47.5=855px) switch to a 12-column layout
 $xsmall-break: 320px;
-$small-break: 47.5em;
-$medium-break: 985px;
+$small-break: 900px;
+$medium-break: 1300px;
 
 @mixin xsmall(){
+  // 0px to 320px
+  // single column, no margins, no book edges
   @media screen and (max-width: $xsmall-break) {
     @content;
   }
 }
 @mixin small(){
+  // 320px to 800px
+  // single column, book edges
   @media screen and (min-width: $xsmall-break) and (max-width: $small-break) {
     @content;
   }
 }
 @mixin medium(){
+  // 800px to 1300px
+  // with sidebar, fluid width
   @media screen and (min-width: $small-break) and (max-width: $medium-break) {
     @content;
   }
 }
 @mixin large(){
+  // 1300px+
+  // with sidebar, fixed width
   @media screen and (min-width: $medium-break) {
     @content;
   }
