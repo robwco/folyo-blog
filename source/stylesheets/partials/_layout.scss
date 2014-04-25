@@ -66,8 +66,8 @@ header{
 
 @-webkit-keyframes show-content {
   0% {
-    transform: rotate(-4deg);
-    left: -600px;
+    transform: rotate(-0.5deg);
+    left: -100px;
   }
   100% {
   	transform: rotate(0deg);
@@ -77,25 +77,38 @@ header{
 @-webkit-keyframes slide-photos {
   0% {
     background-position: -40px;
+    opacity: 1;
   }
   100% {
   	background-position: 0px;
+  	opacity: 1;
   }
 }
 .main{
-  -webkit-animation: show-content 600ms ease-out;	
+  // -webkit-animation: show-content 600ms ease-out;	
 	background:url("../images/content-bg-middle.png") repeat-y top right;
 	margin-bottom: 120px;
-	@include xsmall{
-		background-position: 90%;
-	}
-
+	@include animate();
 	max-width:920px;
-
+	z-index: 100;
 	width: 100%;
 	min-height:1400px;
 	float:left;
 	position:relative;
+	left: 0px;
+
+	@include xsmall{
+		// background-position: 90%;
+		width: calc(100% + 40px);
+	}
+
+	@include xsmall-small{
+		.show-sidebar &{
+			left: -120%;
+		}
+	}
+
+
 	&:before, &:after{
 		content:"";
 		width:100%;
@@ -106,14 +119,14 @@ header{
 	&:before{
 		background:url("../images/content-bg-top.png") no-repeat top right;
 		@include xsmall{
-			background-position: 90%;
+			// background-position: 90%;
 		}
 		top:-30px;
 	}
 	&:after{
 		background:url("../images/content-bg-bottom.png") no-repeat bottom right;
 		@include xsmall{
-			background-position: 90%;
+			// background-position: 90%;
 		}
 		bottom:-30px;
 	}
@@ -122,76 +135,73 @@ header{
 		width: 100%;
 		max-width: 830px;
 		float: right;
+		background:url("../images/stitch.png") repeat-y top right;
+	
 		@include xsmall{
 			// background-color: rgba(0,255,0,0.2);
-
-			padding:10px 20px 10px 20px;
-		// margin: 0 4% 0 8%;
-		right: 0px;
-
+			padding:10px 60px 10px 20px;
+			// margin: 0 4% 0 8%;
+			right: 0px;
 		}
+
 		@include small{
 			// background-color: rgba(0,255,0,0.2);
-
 			padding:10px 60px 10px 20px;
-		// margin: 0 4% 0 8%;
-		right: 0px;
-
+			// margin: 0 4% 0 8%;
+			right: 0px;
 		}
 
 		@include medium{
 			// background-color: rgba(0,0,255,0.2);
-		// right: 40px;
-
-		padding:10px 120px 10px 80px;
-		// margin: 0 4% 0 8%;
-
+			// right: 40px;
+			padding:10px 120px 10px 80px;
+			// margin: 0 4% 0 8%;
 		}
 
 		@include large{
-		// right: 40px;
-
+			// right: 40px;
 			// background-color: rgba(255,0,0,0.2);
-		padding:10px 160px 10px 120px;
-		// margin: 0 40px 0 80px;
+			padding:10px 160px 10px 120px;
+			// margin: 0 40px 0 80px;
 		}
+
+		&:before, &:after{
+			position:absolute;
+			display:block;
+			content:" ";
+			z-index:200;
+			opacity: 0;
+		  -webkit-animation: slide-photos 900ms ease-out 500ms;
+		  -webkit-animation-fill-mode: forwards;
+		  -moz-animation: slide-photos 900ms ease-out 500ms;
+		  -moz-animation-fill-mode: forwards;
+		  overflow: hidden;
+			@include xsmall{
+				display: none;
+			}
+		}
+		&:before{
+			background:url("../images/decor1.png") no-repeat;
+			height:274px;
+			width:83px;
+			top:1000px;
+			right:-48px;
+		}
+		&:after{
+			background:url("../images/decor2.png") no-repeat;
+			width:78px;
+			height:209px;
+			top:300px;
+			right:-39px;
+		}
+
 	}
 
-}
-.inner{
-	background:url("../images/stitch.png") repeat-y top right;
-	position:relative;
-	&:before, &:after{
-		position:absolute;
-		display:block;
-		content:" ";
-		z-index:200;
-	  -webkit-animation: slide-photos 900ms ease-out;	
-	  overflow: hidden;
-		@include xsmall{
-			display: none;
-		}
-	}
-	&:before{
-		background:url("../images/decor1.png") no-repeat;
-		height:274px;
-		width:83px;
-		top:1000px;
-		right:-48px;
-	}
-	&:after{
-		background:url("../images/decor2.png") no-repeat;
-		width:78px;
-		height:209px;
-		top:300px;
-		right:-39px;
-	}
 }
 
 
 /*-------------- background ---------------*/
-html{
-}
+
 @-webkit-keyframes zoom-out {
   0% {
     transform: scale(1.1);
@@ -215,21 +225,9 @@ html{
 	// background: url("../images/bg-beige.jpg");
 	// background: $darkerBlue;
 }
-.container{
-	position: relative;
-	z-index: 10;
-}
+
 * {
 	-moz-box-sizing: border-box;
 	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
-}
-
-#sidebar{
-	width:200px;
-	float:right;
-}
-#footer{
-	width:100%;
-	float:left;
 }

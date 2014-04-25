@@ -30,7 +30,7 @@
     %meta{:property => "og:image", :content => ""}
 
   - if content_for?(:layout)
-    - body_class = yield_content(:layout)+"-layout"+ ' single single-post postid-8 single-format-aside designer-advice'
+    - body_class = yield_content(:layout)+"-layout"
   - else
     - body_class = ''
   
@@ -44,6 +44,12 @@
 
     = yield_content(:back)
 
+    %a.sidebar-toggle{:href => 'javascript:void(0)'}
+      %span.open
+        %img{:src => '/images/menu-open.svg'}
+      %span.close
+        %img{:src => '/images/menu-close.svg'}
+        
     .container.clearfix
 
 

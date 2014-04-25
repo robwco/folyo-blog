@@ -19,6 +19,13 @@ $medium-break: 1300px;
     @content;
   }
 }
+@mixin xsmall-small(){
+  // 0px to 800px
+  // single column
+  @media screen and (max-width: $small-break) {
+    @content;
+  }
+}
 @mixin medium(){
   // 800px to 1300px
   // with sidebar, fluid width

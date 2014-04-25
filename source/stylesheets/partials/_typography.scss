@@ -5,6 +5,11 @@ body, input, textarea, p, button{
 	color: #4E525E;
 	font-size:18px;
 	line-height:1.8;
+
+	@include xsmall-small{
+		font-size: 15px;
+	}
+
 }
 h1, h2, h3, h4, h5, .navigation, .credit{
 	// font-family:"flood-std", "ff-market-web","Proxima Nova";
