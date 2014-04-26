@@ -153,11 +153,9 @@
 .post-content{
   // padding: 0 60px;
   p, h2, h3, h4, ul, ol, hr, blockquote, pre, .highlight{
-    @include small{
+    margin-bottom: $pspacing;
+    @include xsmall-small{
       margin-bottom: $halfspacing;
-    }
-    @include medium{
-      margin-bottom: $pspacing;
     }
   }
   >p:first-child{
