@@ -1,6 +1,6 @@
 - post = current_article
 
-- content_for(:title, "#{post.title} - Discover Meteor")
+- content_for(:title, "#{post.title}")
 - content_for(:layout, "post")
 - content_for(:itemtype, "Article")
 - content_for(:back, '<a class="back-to-home" href="/">⬅ Back to Blog</a>')
@@ -33,7 +33,7 @@
       %h4 Share this article:
       .post-share-option.twitter
         :plain
-          <a href="https://twitter.com/share" class="twitter-share-button" data-via="DiscoverMeteor">Tweet</a>
+          <a href="https://twitter.com/share" class="twitter-share-button" data-via="YoFolyo">Tweet</a>
           <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
       .post-share-option.gplus
         :plain

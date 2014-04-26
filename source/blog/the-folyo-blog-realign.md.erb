@@ -1,8 +1,82 @@
 ---
-title: The Folyo Blog Realign
+title: Realigning the Folyo Blog 
 author: sacha
 published: true
-date: 2014/04/09
-thumb: professional.jpg
+date: 2014/04/01
+thumb: align.jpg
 tags: Article
 ---
+
+The web moves fast. Trends like flat design and responsive design didn't even exist a couple years ago. Yet some things can stay surprisingly relevant, even 10 years on. 
+
+[Cameron Moll](http://www.cameronmoll.com/)'s article about [realigning rather than redesigning](http://alistapart.com/article/redesignrealign) is one of those things, and it immediately made sense to me when I first read it,. 
+
+After all, why throw out all the valuable lessons learned through a previous design when you can build on them and improve something iteratively instead?
+
+So this is exactly the approach I chose when it came time to refresh and update this blog. 
+
+Compare the old design (2011):
+
+<%= figure "blog/folyo-blog-old.jpg" %>
+
+With the new one (2014):
+
+<%= figure "blog/folyo-blog-new.jpg" %>
+
+The overall layout and concept stayed the same, but I introduced a lot of small tweaks.
+
+### Visual Design
+
+The most obvious change is the overall aesthetic of the blog. The original was designed before the flat design era, when skeuomorphic realism was all the rage, and it was starting to look extremely dated. 
+
+Yet at the same time, I still liked the “fake notebook” concept, and I didn't want the design to be just one more centered column of text on a white background.
+
+So I started looking for a different approach. I tweaked the cover of the notebook and the texture of the paper, but I hit a wall when it came to the background. 
+
+A dark texture made the site look gloomy, but a light background didn't make the notebook pop out enough. 
+
+<%= figure "blog/macdesks.jpg", "Mac Desks: showcasing beautiful workplaces.", "", "http://macdesks.com/" %>
+
+The breakthrough came while browsing [Mac Desks](http://macdesks.com/). If a texture or flat color didn't work, I'd use a photo! This gave the design the atmospheric feeling I was looking for, and also inspired the final color scheme. 
+
+### Typography
+
+I also overhauled the typography. I was previously using [Open Sans](http://www.google.com/fonts/specimen/Open+Sans), which is a great font but didn't really match the feeling I was going after. 
+
+<%= figure "blog/abril.jpg", "Abril Text." %>
+
+I wanted something elegant yet readable, so a serif font made sense. While browsing Typekit, I finally settled on [Abril Text](https://typekit.com/fonts/abril-text), a beautiful face which had the added advantage of being available both as a web and desktop font. 
+
+<%= figure "blog/crete.jpg", "Crete Rounded." %>
+
+To complement it, I picked slab serif [Crete Rounded](https://typekit.com/fonts/crete-rounded-web) for headings. I had been looking for an excuse to use it for a long time, and its solid curves seemed the perfect match for Abril Text's lighter strokes. 
+
+### Responsive Design
+
+When I first designed the blog in 2011, mobile browsing was on the way up but still represented a minor proportion of traffic. 
+
+Now in 2014, the situation is of course vastly different. Mobile traffic can't be ignored, and a blog needs to be responsive.
+
+But I knew it wouldn't be easy to “responsify” the site. Responsive design works great for simple designs, but quickly gets tricky when dealing with complex layouts and background images. 
+
+I ended up using three different breakpoints to deal with the various layouts. The result is a bunch of ugly code, but at least it works!
+
+### Simplifying
+
+I also got rid of most of the content in the sidebar. This was both because of my own laziness (simpler is faster!), and also because I personally rarely click sidebar links. 
+
+Instead, I decided to put the focus on the newsletter. Email is still the most reliable way of building an audience, so it makes sense to promote it first. 
+
+### Bye Bye WordPress
+
+On the back-end front, I also got rid of WordPress in favor of [Middleman](middlemanapp.com), my static site generator of choice. 
+
+Switching to a static site greatly simplifies deployment, hosting, and scaling, and also makes development faster. These days, WordPress is probably overkill for the vast majority of blogs, especially if you're comfortable with managing your content through version control. 
+
+### Make Yourselves at Home
+
+One thing I've realized over my years of blogging is that it's very hard for me to write on a blog if I don't like its design. So hopefully, this refreshed design will also encourage me to write more.
+
+I'm also in the process of editing, updating, and republishing the blog's previous articles, so stay tuned for more content soon.
+
+In the meantime, take a look around, and let me know what you think!
