@@ -1,10 +1,12 @@
-
-// If you change your grid column dimensions
-// you can make a new grid background image from the command line like this:
-// compass grid-img 30+10x16
+* {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
 
 body{
 }
+
 .container{
 	position: relative;
 	top:80px;
@@ -13,221 +15,54 @@ body{
 		margin-right: 300px;
 	}
 }
-/*-------------- navigation ---------------*/
-header{
-	width:200px;
-	margin-bottom:40px;
-	float:right;
-	#navigation{
-		display:none;
-		margin-bottom:50px;
-		font-size:16px;
-		#skip{
-			display:none;
-		}
-		#selectmenu-primary{
-			display:none;
-		}
-		ul{
-			height:91px;
-			overflow:hidden;
-			margin:0;
-			padding:0;
-			li{
-				width:90px;
-				float:left;
-				display:block;
-				margin-bottom:5px;
-				&:nth-child(odd){
-					margin-right:$unit;
-				}
-				&:nth-child(5),&:nth-child(6){
-					margin-bottom:0;
-				}
-				a{
-					&:visited{
-						color:$red;
-					}
-					&:hover{
-						color:$brown !important;
-					}
-				}
-				&.current-menu-item a{
-					cursor:text;
-					color:$brown;
-					&:visited{
-						color:$brown;
-					}
-				}
-			}
-		}
-	}
-}
 
-@-webkit-keyframes show-content {
-  0% {
-    transform: rotate(-0.5deg);
-    left: -100px;
-  }
-  100% {
-  	transform: rotate(0deg);
-  	left: 0px;
-  }
-}
-@-webkit-keyframes slide-photos {
-  0% {
-    background-position: -40px;
-    opacity: 1;
-  }
-  100% {
-  	background-position: 0px;
-  	opacity: 1;
-  }
-}
 .main{
-  // -webkit-animation: show-content 600ms ease-out;	
-	background:url("../images/content-bg-middle.png") repeat-y top right;
-	margin-bottom: 120px;
-	@include animate();
-	max-width:920px;
-	z-index: 100;
-	width: 100%;
-	min-height:1400px;
-	float:left;
-	position:relative;
-	left: 0px;
-
+  max-width:920px;
+  z-index: 100;
+  width: 100%;
+  min-height:1400px;
+  margin-bottom: 120px;
+  float:left;
+  position:relative;
+  left: 0px;
 	@include xsmall{
-		// background-position: 90%;
-		width: calc(100% + 40px);
+	  // background-position: 90%;
+	  width: calc(100% + 40px);
 	}
 
 	@include xsmall-small{
-		.show-sidebar &{
-			left: -120%;
-		}
-	}
-
-
-	&:before, &:after{
-		content:"";
-		width:100%;
-		height:30px;
-		position:absolute;
-		left:0px;
-	}
-	&:before{
-		background:url("../images/content-bg-top.png") no-repeat top right;
-		@include xsmall{
-			// background-position: 90%;
-		}
-		top:-30px;
-	}
-	&:after{
-		background:url("../images/content-bg-bottom.png") no-repeat bottom right;
-		@include xsmall{
-			// background-position: 90%;
-		}
-		bottom:-30px;
-	}
-	.inner{
-		position: relative;
-		width: 100%;
-		max-width: 830px;
-		float: right;
-		background:url("../images/stitch.png") repeat-y top right;
-	
-		@include xsmall{
-			// background-color: rgba(0,255,0,0.2);
-			padding:10px 60px 10px 20px;
-			// margin: 0 4% 0 8%;
-			right: 0px;
-		}
-
-		@include small{
-			// background-color: rgba(0,255,0,0.2);
-			padding:10px 60px 10px 20px;
-			// margin: 0 4% 0 8%;
-			right: 0px;
-		}
-
-		@include medium{
-			// background-color: rgba(0,0,255,0.2);
-			// right: 40px;
-			padding:10px 120px 10px 80px;
-			// margin: 0 4% 0 8%;
-		}
-
-		@include large{
-			// right: 40px;
-			// background-color: rgba(255,0,0,0.2);
-			padding:10px 160px 10px 120px;
-			// margin: 0 40px 0 80px;
-		}
-
-		&:before, &:after{
-			position:absolute;
-			display:block;
-			content:" ";
-			z-index:200;
-			opacity: 0;
-		  -webkit-animation: slide-photos 900ms ease-out 500ms;
-		  -webkit-animation-fill-mode: forwards;
-		  -moz-animation: slide-photos 900ms ease-out 500ms;
-		  -moz-animation-fill-mode: forwards;
-		  overflow: hidden;
-			@include xsmall{
-				display: none;
-			}
-		}
-		&:before{
-			background:url("../images/decor1.png") no-repeat;
-			height:274px;
-			width:83px;
-			top:1000px;
-			right:-48px;
-		}
-		&:after{
-			background:url("../images/decor2.png") no-repeat;
-			width:78px;
-			height:209px;
-			top:300px;
-			right:-39px;
-		}
-
-	}
-
+	  .show-sidebar &{
+	    left: -120%;
+	  }
+	}  
 }
 
+.inner{
+  position: relative;
+  width: 100%;
+  max-width: 830px;
+  float: right;
 
-/*-------------- background ---------------*/
-
-@-webkit-keyframes zoom-out {
-  0% {
-    transform: scale(1.1);
+  @include xsmall{
+    // background-color: rgba(0,255,0,0.2);
+    padding:10px 60px 10px 20px;
+    right: 0px;
   }
-  100% {
-  	transform: scale(1);
+
+  @include small{
+    // background-color: rgba(0,255,0,0.2);
+    padding:10px 60px 10px 20px;
+    right: 0px;
   }
-}
-.background{
-  -webkit-animation: zoom-out 900ms ease-out;		
-	// background:url("../images/blackboard-bg.png");
-	// background: url("../images/bg-blurred.jpg") no-repeat;
-	// background: url("../images/bg-blurred2.jpg") no-repeat;
-	background: url("../images/bg-blurred3.jpg") no-repeat;
 
-	background-size: cover;
-	position: fixed;
-	height: 100%;
-	width: 100%;
-	z-index: 0;
-	// background: url("../images/bg-beige.jpg");
-	// background: $darkerBlue;
-}
+  @include medium{
+    // background-color: rgba(0,0,255,0.2);
+    padding:10px 120px 10px 80px;
+  }
 
-* {
-	-moz-box-sizing: border-box;
-	-webkit-box-sizing: border-box;
-	box-sizing: border-box;
+  @include large{
+    // background-color: rgba(255,0,0,0.2);
+    padding:10px 160px 10px 120px;
+  }
+
 }

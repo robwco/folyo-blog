@@ -1,0 +1,45 @@
+@keyframes show-content {
+  0% {
+    transform: rotate(-0.5deg);
+    left: -100px;
+  }
+  100% {
+    transform: rotate(0deg);
+    left: 0px;
+  }
+}
+
+@keyframes slide-photos {
+  0% {
+    background-position: -40px;
+    opacity: 1;
+  }
+  100% {
+    background-position: 0px;
+    opacity: 1;
+  }
+}
+
+@keyframes zoom-out {
+  0% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.background{
+  animation: zoom-out 900ms ease-out;
+}
+
+.main{
+  // -webkit-animation: show-content 600ms ease-out;  
+}
+
+.inner{
+  &:before, &:after{
+    animation: slide-photos 900ms ease-out 500ms;
+    animation-fill-mode: forwards;
+  }
+}

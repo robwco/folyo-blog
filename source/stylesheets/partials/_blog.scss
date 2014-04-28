@@ -245,14 +245,7 @@
 
 }
 .post-share{
-  @include small{
-    margin-bottom: $spacing;
-  }
-  @include medium{
-    margin:0 60px $spacing 60px;
-  }
-  padding: 10px;
-  background: $super-light-bg;
+  margin-bottom: $spacing;
   h4{
     display: inline-block;
     margin: 0;

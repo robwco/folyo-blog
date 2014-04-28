@@ -14,7 +14,7 @@
     / Included CSS Files
     %link{:href => "/stylesheets/style.css", :rel => "stylesheet"}
     %link{:href => "/images/favicon.ico", :rel => "shortcut icon"}
-    %link{:href => "/feed.xml", :rel => "alternate", :type => "application/rss+xml", :title => "Discover Meteor Feed"}
+    %link{:href => "/feed.xml", :rel => "alternate", :type => "application/rss+xml", :title => "Folyo Blog Feed"}
 
     - if content_for?(:canonical)
       =yield_content(:canonical)
@@ -51,9 +51,7 @@
         %img{:src => '/images/menu-close.svg'}
         
     .container.clearfix
-
-
-      .main#content
+      .main
         .inner
           =yield
       =partial("partials/sidebar")

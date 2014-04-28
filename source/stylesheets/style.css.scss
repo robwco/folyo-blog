@@ -1,27 +1,33 @@
+// Libraries - external stuff
+
 @import "compass/css3";
 @import "susy";
+
+// Includes - mixins, variables, etc.
 
 @import "partials/mixins";
 @import "partials/colors";
 @import "partials/grid";
-$unit: 60px;
-@import "partials/boilerplate";
 
+// Common - styles that apply to everything
+
+@import "partials/boilerplate";
 @import "partials/layout";
 @import "partials/typography";
-@import "partials/fancybox";
-@import "partials/modules";
-@import "partials/pages";
+@import "partials/animations";
 
-@import "partials/searchform";
-@import "partials/posts-river";
-@import "partials/navigation";
-@import "partials/entry-date";
-@import "partials/post";
-@import "partials/roundtable";
-@import "partials/survey";
+// Modules - elements that are reused throughout the design
+
+// @import "partials/fancybox";
+// @import "partials/post";
+@import "partials/notebook";
 @import "partials/blog";
 @import "partials/figures";
 @import "partials/sidebar";
 @import "partials/pagination";
 @import "partials/newsletter";
+
+// Special - elements that only appear once
+
+// @import "partials/roundtable";
+// @import "partials/survey";

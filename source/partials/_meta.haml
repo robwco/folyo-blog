@@ -17,5 +17,8 @@
       = author.display_name
     - if post.tags
       in
-      - post.tags.each do |tag|
+      - post.tags.each_with_index do |tag, i|
+        - if i > 0
+          %span><
+            ,&nbsp;
         %a.meta-category.category{:href => tag_path(tag)}=tag.pluralize()
