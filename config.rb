@@ -10,7 +10,7 @@ require 'sanitize'
 activate :blog do |blog|
   # blog.prefix = "blog"
   blog.sources = "blog/:title.html"
-  blog.permalink = "blog/{title}"
+  blog.permalink = "/{title}"
   # blog.sources = ":year-:month-:day-:title.html"
   blog.taglink = "category/:tag.html"
   blog.layout = "post_layout"

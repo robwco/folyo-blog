@@ -1,0 +1,1641 @@
+@charset "UTF-8";
+/* line 14, /Users/sacha/.rvm/gems/ruby-2.1.1/gems/susy-1.0.9/sass/susy/_grid.scss */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+@media screen and (min-width: 900px) and (max-width: 1300px) {
+  /* line 55, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_grid.scss */
+  .small {
+    display: none !important; } }
+
+@media screen and (min-width: 320px) and (max-width: 900px) {
+  /* line 60, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_grid.scss */
+  .medium {
+    display: none !important; } }
+
+/* line 68, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_grid.scss */
+html, body {
+  overflow: hidden; }
+
+/* line 84, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_grid.scss */
+header, #sidebar {
+  display: none !important; }
+
+/** START HTML5 Boilerplate CSS **/
+/**
+ * HTML5 ✰ Boilerplate
+ *
+ * style.css contains a reset, font normalization and some base styles.
+ *
+ * Credit is left where credit is due.
+ * Much inspiration was taken from these projects:
+ * - yui.yahooapis.com/2.8.1/build/base/base.css
+ * - camendesign.com/design/
+ * - praegnanz.de/weblog/htmlcssjs-kickstart
+ */
+/**
+ * html5doctor.com Reset Stylesheet (Eric Meyer's Reset Reloaded + HTML5 baseline)
+ * v1.6.1 2010-09-17 | Authors: Eric Meyer & Richard Clark
+ * html5doctor.com/html-5-reset-stylesheet/
+ */
+/* line 31, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_boilerplate.scss */
+html, body, body div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  vertical-align: baseline; }
+
+/* line 39, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_boilerplate.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+/* line 43, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_boilerplate.scss */
+blockquote, q {
+  quotes: none; }
+
+/* line 46, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_boilerplate.scss */
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none; }
+
+/* line 48, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_boilerplate.scss */
+ins {
+  background-color: #ff9;
+  color: #000;
+  text-decoration: none; }
+
+/* line 50, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_boilerplate.scss */
+mark {
+  background-color: #ff9;
+  color: #000;
+  font-style: italic;
+  font-weight: bold; }
+
+/* line 52, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_boilerplate.scss */
+del {
+  text-decoration: line-through; }
+
+/* line 54, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_boilerplate.scss */
+abbr[title], dfn[title] {
+  border-bottom: 1px dotted;
+  cursor: help; }
+
+/* line 56, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_boilerplate.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+/* line 58, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_boilerplate.scss */
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0; }
+
+/**
+ * Font normalization inspired by YUI Library's fonts.css: developer.yahoo.com/yui/
+ */
+/* line 65, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_boilerplate.scss */
+body {
+  font: 13px/1.231 sans-serif;
+  *font-size: small; }
+
+/* Hack retained to preserve specificity */
+/* Normalize monospace sizing:
+   en.wikipedia.org/wiki/MediaWiki_talk:Common.css/Archive_11#Teletype_style_fix_for_Chrome */
+/* line 69, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_boilerplate.scss */
+pre, code, kbd, samp {
+  font-family: monospace, sans-serif; }
+
+/**
+ * Minimal base styles.
+ */
+/* 1) Always force a scrollbar in non-IE
+   2) Remove iOS text size adjust without disabling user zoom: www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/ */
+/* line 78, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_boilerplate.scss */
+html {
+  overflow-y: scroll;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%; }
+
+/* j.mp/webkit-tap-highlight-color */
+/* line 81, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_boilerplate.scss */
+a:link {
+  -webkit-tap-highlight-color: #FF5E99; }
+
+/* Accessible focus treatment: people.opera.com/patrickl/experiments/keyboard/test */
+/* line 84, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_boilerplate.scss */
+a:hover, a:active {
+  outline: none; }
+
+/* line 86, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_boilerplate.scss */
+a, a:active, a:visited {
+  color: #607890; }
+
+/* line 87, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_boilerplate.scss */
+a:hover {
+  color: #036; }
+
+/* line 89, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_boilerplate.scss */
+ul, ol {
+  margin-left: 2em; }
+
+/* line 90, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_boilerplate.scss */
+ol {
+  list-style-type: decimal; }
+
+/* Remove margins for navigation lists */
+/* line 93, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_boilerplate.scss */
+nav ul, nav li {
+  margin: 0;
+  list-style: none;
+  list-style-image: none; }
+
+/* line 95, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_boilerplate.scss */
+small {
+  font-size: 85%; }
+
+/* line 96, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_boilerplate.scss */
+b, strong, th {
+  font-weight: bold; }
+
+/* line 98, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_boilerplate.scss */
+td {
+  vertical-align: top; }
+
+/* Set sub, sup without affecting line-height: gist.github.com/413930 */
+/* line 101, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_boilerplate.scss */
+sub, sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative; }
+
+/* line 102, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_boilerplate.scss */
+sup {
+  top: -0.5em; }
+
+/* line 103, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_boilerplate.scss */
+sub {
+  bottom: -0.25em; }
+
+/* line 105, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_boilerplate.scss */
+pre {
+  /* www.pathf.com/blogs/2008/05/formatting-quoted-code-in-blog-posts-css21-white-space-pre-wrap/ */
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  padding: 15px; }
+
+/* line 111, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_boilerplate.scss */
+.ie6 legend, .ie7 legend {
+  margin-left: -7px; }
+
+/* 1) Make inputs and buttons play nice in IE: www.viget.com/inspire/styling-the-button-element-in-internet-explorer/
+   2) WebKit browsers add a 2px margin outside the chrome of form elements.
+      Firefox adds a 1px margin above and below textareas
+   3) Set font-size to match <body>'s, and font-family to sans-serif
+   4) Align to baseline */
+/* line 118, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_boilerplate.scss */
+button, input, select, textarea {
+  width: auto;
+  overflow: visible;
+  margin: 0;
+  font-size: 100%;
+  font-family: sans-serif;
+  vertical-align: baseline; }
+
+/* 1) Remove default scrollbar in IE: www.sitepoint.com/blogs/2010/08/20/ie-remove-textarea-scrollbars/
+   2) Align to text-top */
+/* line 122, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_boilerplate.scss */
+textarea {
+  overflow: auto;
+  vertical-align: text-top; }
+
+/* Hand cursor on clickable input elements */
+/* line 125, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_boilerplate.scss */
+label, input[type="button"], input[type="submit"], input[type="image"], button {
+  cursor: pointer; }
+
+/* Remove extra padding and inner border in Firefox */
+/* line 129, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_boilerplate.scss */
+input::-moz-focus-inner,
+button::-moz-focus-inner {
+  border: 0;
+  padding: 0; }
+
+/* Colors for form validity */
+/* line 133, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_boilerplate.scss */
+input:invalid, textarea:invalid {
+  border-radius: 1px;
+  -webkit-box-shadow: 0px 0px 5px red;
+  box-shadow: 0px 0px 5px red; }
+
+/* line 134, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_boilerplate.scss */
+.no-boxshadow input:invalid, .no-boxshadow textarea:invalid {
+  background-color: #f0dddd; }
+
+/* Bicubic resizing for non-native sized IMG:
+   code.flickr.com/blog/2008/11/12/on-ui-quality-the-little-things-client-side-image-resizing/ */
+/* line 138, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_boilerplate.scss */
+.ie7 img {
+  -ms-interpolation-mode: bicubic; }
+
+/**
+ * You might tweak these..
+ */
+/* line 145, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_boilerplate.scss */
+body, select, input, textarea {
+  /* #444 looks better than black: twitter.com/H_FJ/statuses/11800719859 */
+  color: #444;
+  /* Set your base font here, to apply evenly */
+  /* font-family: Georgia, serif;  */ }
+
+/* Headers (h1, h2, etc) have no default font-size or margin; define those yourself */
+/* line 153, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_boilerplate.scss */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold; }
+
+/* These selection declarations have to be separate
+   No text-shadow: twitter.com/miketaylr/status/12228805301
+   Also: hot pink! */
+/* line 158, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_boilerplate.scss */
+::-moz-selection {
+  background: #4e9ec4;
+  color: #fff;
+  text-shadow: none; }
+
+/* line 159, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_boilerplate.scss */
+::-moz-selection {
+  background: #4e9ec4;
+  color: #fff;
+  text-shadow: none; }
+::selection {
+  background: #4e9ec4;
+  color: #fff;
+  text-shadow: none; }
+
+/**
+ * Primary styles
+ *
+ * Author:
+ */
+/**
+ * Non-semantic helper classes: please define your styles before this section.
+ */
+/* For image replacement */
+/* line 187, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_boilerplate.scss */
+.ir {
+  display: block;
+  text-indent: -999em;
+  overflow: hidden;
+  background-repeat: no-repeat;
+  text-align: left;
+  direction: ltr; }
+
+/* line 188, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_boilerplate.scss */
+.ir br {
+  display: none; }
+
+/* Hide for both screenreaders and browsers:
+   css-discuss.incutio.com/wiki/Screenreader_Visibility */
+/* line 192, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_boilerplate.scss */
+.hidden {
+  display: none;
+  visibility: hidden; }
+
+/* Hide only visually, but have it available for screenreaders: by Jon Neal.
+  www.webaim.org/techniques/css/invisiblecontent/  &  j.mp/visuallyhidden */
+/* line 196, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_boilerplate.scss */
+.visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px; }
+
+/* Extends the .visuallyhidden class to allow the element to be focusable when navigated to via the keyboard: drupal.org/node/897638 */
+/* line 199, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_boilerplate.scss */
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto; }
+
+/* Hide visually and from screenreaders, but maintain layout */
+/* line 202, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_boilerplate.scss */
+.invisible {
+  visibility: hidden; }
+
+/* The Magnificent Clearfix: Updated to prevent margin-collapsing on child elements in most situations.
+   nicolasgallagher.com/micro-clearfix-hack/ */
+/* line 206, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_boilerplate.scss */
+.clearfix:before, .clearfix:after {
+  content: "";
+  display: table; }
+
+/* line 207, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_boilerplate.scss */
+.clearfix:after {
+  clear: both; }
+
+/* line 208, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_boilerplate.scss */
+.clearfix {
+  zoom: 1; }
+
+/**
+ * Placeholder media queries for responsive design. Modify as design requires.
+ * These follow after, and will override, the primary ('mobile first') styles
+ * The closing /mediaquery comment is required by respond.js min/max-width Media Query polyfill
+ */
+@media only screen and (min-width: 480px) {
+  /* Style adjustments for viewports 480px and over go here */ }
+/*/mediaquery*/
+@media only screen and (min-width: 768px) {
+  /* Style adjustments for viewports 768px and over go here */ }
+/*/mediaquery*/
+/**
+ * Print styles.
+ *
+ * Inlined to avoid required HTTP connection: www.phpied.com/delay-loading-your-print-css/
+ */
+@media print {
+  /* line 236, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_boilerplate.scss */
+  * {
+    background: transparent !important;
+    color: black !important;
+    text-shadow: none !important;
+    -webkit-filter: none !important;
+    filter: none !important;
+    -ms-filter: none !important; }
+
+  /* Black prints faster: sanbeiji.com/archives/953 */
+  /* line 238, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_boilerplate.scss */
+  a, a:visited {
+    color: #444 !important;
+    text-decoration: underline; }
+
+  /* line 239, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_boilerplate.scss */
+  a[href]:after {
+    content: " (" attr(href) ")"; }
+
+  /* line 240, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_boilerplate.scss */
+  abbr[title]:after {
+    content: " (" attr(title) ")"; }
+
+  /* line 241, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_boilerplate.scss */
+  .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after {
+    content: ""; }
+
+  /* Don't show links for images, or javascript/internal links */
+  /* line 242, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_boilerplate.scss */
+  pre, blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid; }
+
+  /* line 243, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_boilerplate.scss */
+  thead {
+    display: table-header-group; }
+
+  /* css-discuss.incutio.com/wiki/Printing_Tables */
+  /* line 244, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_boilerplate.scss */
+  tr, img {
+    page-break-inside: avoid; }
+
+  /* line 245, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_boilerplate.scss */
+  img {
+    max-width: 100% !important; }
+
+  @page {
+    margin: 0.5cm; }
+
+  /* line 247, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_boilerplate.scss */
+  p, h2, h3 {
+    orphans: 3;
+    widows: 3; }
+
+  /* line 248, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_boilerplate.scss */
+  h2, h3 {
+    page-break-after: avoid; } }
+/** END HTML5 Boilerplate CSS **/
+/** START Starkers CSS **/
+/* LAYOUT */
+/* ----------------------------------------- */
+/* These rather presentational classes are generated by WordPress, so it's useful to have some styles for them. Edit as you see fit. More info: http://codex.wordpress.org/CSS */
+/* line 260, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_boilerplate.scss */
+.aligncenter {
+  display: block;
+  margin: 0 auto; }
+
+/* line 261, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_boilerplate.scss */
+.alignleft {
+  float: left; }
+
+/* line 262, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_boilerplate.scss */
+.alignright {
+  float: right; }
+
+/* You might find the following useful */
+                                                                      /* div, ul, li { position:relative } This will save you having to declare each div / ul / li's position as 'relative' and allows you to absolutely position elements inside them
+br.clear { clear:both; display:block; height:1px; margin:-1px 0 0 0 } /* Use this br class to clear your floated columns */
+/* line 267, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_boilerplate.scss */
+li#theme-switcher {
+  background: #fff;
+  border: 10px solid red;
+  padding: 20px;
+  position: fixed;
+  top: 0;
+  right: 0; }
+
+/* Use this if you have the Theme Switcher Reloaded plugin (http://themebot.com/webmaster-tools/1-wordpress-theme-switcher-reloaded) installed and want to make it nice and obvious */
+/* TYPOGRAPHY */
+/* ----------------------------------------- */
+/* line 272, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_boilerplate.scss */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold; }
+
+/* This helps to identify headings at the initial build stage, so I thought it'd be useful to have it */
+/* line 273, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_boilerplate.scss */
+.alert {
+  background: red;
+  color: white; }
+
+/* 'alert' has a basic style, since it's useful to have it standing out for testing purposes.
+
+
+
+/* Font stack options
+
+	The following represents a list of font stacks, as recommended by Nathan Ford in
+	http://unitinteractive.com/blog/2008/06/26/better-css-font-stacks/
+
+	I've added inverted commas around the relevant family names to ensure compatibility.
+	p = balanced for paragraphs or body copy
+	t = balanced for headlines or titles
+
+	- - - -
+
+Arial, "Helvetica Neue", Helvetica, sans-serif - p, t
+
+Baskerville, "Times New Roman", Times, serif - p
+Baskerville, "Times, Times New Roman", serif - t
+
+Cambria, Georgia, Times, "Times New Roman", serif - p, t
+"Century Gothic", "Apple Gothic", sans-serif - p, t
+
+Consolas, "Lucida Console", Monaco, monospace - p, t
+
+"Copperplate Light", "Copperplate Gothic Light", serif - p, t
+
+"Courier New", Courier, monospace - p, t
+
+"Franklin Gothic Medium", "Arial Narrow Bold", Arial, sans-serif - p, t
+
+Futura, "Century Gothic", "Apple Gothic", sans-serif - p, t
+
+Garamond, "Hoefler Text", "Times New Roman", Times, serif - p
+Garamond, "Hoefler Text", Palatino, "Palatino Linotype", serif - t
+
+Geneva, "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", Verdana, sans-serif - p
+Geneva, Verdana, "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", sans-serif - t
+
+Georgia, Palatino, "Palatino Linotype", Times, "Times New Roman", serif - p
+Georgia, Times, "Times New Roman", serif - t
+
+GillSans, Calibri, Trebuchet, sans-serif - p
+GillSans, Trebuchet, Calibri, sans-serif - t
+
+"Helvetica Neue", Arial, Helvetica, sans-serif - p
+Helvetica, "Helvetica Neue", Arial, sans-serif - t
+
+Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif - p, t
+
+"Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", sans-serif - p, t
+
+Palatino, "Palatino Linotype", Georgia, Times, "Times New Roman", serif - p
+Palatino, "Palatino Linotype", "Hoefler Text", Times, "Times New Roman", serif - t
+
+Tahoma, Geneva, Verdana - p
+Tahoma, Verdana, Geneva - t
+
+Times, "Times New Roman", Georgia, serif - p, t
+
+Trebuchet, "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif - p
+Trebuchet, Tahoma, Arial, sans-serif - t
+
+Verdana, Geneva, Tahoma, sans-serif - p
+Verdana, Tahoma, Geneva, sans-serif - t
+
+*/
+/** END Starkers CSS **/
+/** START WordPress-Defined CSS Classes **/
+/** END WordPress-Defined CSS Classes **/
+/* line 1, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_layout.scss */
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
+/* line 10, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_layout.scss */
+.container {
+  position: relative;
+  top: 80px;
+  padding-bottom: 120px; }
+  @media screen and (min-width: 900px) and (max-width: 1300px) {
+    /* line 10, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_layout.scss */
+    .container {
+      margin-right: 300px; } }
+
+/* line 19, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_layout.scss */
+.main {
+  max-width: 920px;
+  z-index: 100;
+  width: 100%;
+  min-height: 1400px;
+  margin-bottom: 120px;
+  float: left;
+  position: relative;
+  left: 0px; }
+  @media screen and (max-width: 320px) {
+    /* line 19, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_layout.scss */
+    .main {
+      width: -webkit-calc(100% + 40px);
+      width: calc(100% + 40px); } }
+  @media screen and (max-width: 900px) {
+    /* line 34, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_layout.scss */
+    .show-sidebar .main {
+      left: -120%; } }
+
+/* line 40, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_layout.scss */
+.inner {
+  position: relative;
+  width: 100%;
+  max-width: 830px;
+  float: right; }
+  @media screen and (max-width: 320px) {
+    /* line 40, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_layout.scss */
+    .inner {
+      padding: 10px 60px 10px 20px;
+      right: 0px; } }
+  @media screen and (min-width: 320px) and (max-width: 900px) {
+    /* line 40, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_layout.scss */
+    .inner {
+      padding: 10px 60px 10px 20px;
+      right: 0px; } }
+  @media screen and (min-width: 900px) and (max-width: 1300px) {
+    /* line 40, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_layout.scss */
+    .inner {
+      padding: 10px 120px 10px 80px; } }
+  @media screen and (min-width: 1300px) {
+    /* line 40, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_layout.scss */
+    .inner {
+      padding: 10px 160px 10px 120px; } }
+
+/* line 1, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_typography.scss */
+body, input, textarea, p, button {
+  font-family: "Abril Text", "abril-text", "Georgia", serif;
+  color: #485056;
+  color: #4E525E;
+  font-size: 18px;
+  line-height: 1.8; }
+  @media screen and (max-width: 900px) {
+    /* line 1, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_typography.scss */
+    body, input, textarea, p, button {
+      font-size: 15px; } }
+
+/* line 14, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_typography.scss */
+h1, h2, h3, h4, h5, .navigation, .credit {
+  font-family: 'Crete Round', "crete-round", serif;
+  font-weight: normal;
+  line-height: 1.2;
+  color: #24587C; }
+
+/* line 25, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_typography.scss */
+p, ul, ol, hr, h1, h2, h3, h4, h5, h6 {
+  margin: 0 0 30px 0; }
+
+/* line 28, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_typography.scss */
+h1 {
+  font-size: 60px; }
+
+/* line 31, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_typography.scss */
+h2 {
+  font-size: 48px;
+  font-weight: 600; }
+
+/* line 35, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_typography.scss */
+h3 {
+  font-size: 36px; }
+
+/* line 38, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_typography.scss */
+h4 {
+  font-size: 24px; }
+
+/* line 41, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_typography.scss */
+h5 {
+  font-size: 14px; }
+
+/* line 44, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_typography.scss */
+h6 {
+  font-size: 12px; }
+
+/* line 48, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_typography.scss */
+.entry-content h1, .entry-content h2, .entry-content h3, .entry-content h4, .entry-content h5, .entry-content ul, .entry-content ol, .entry-content p, .entry-content hr, .entry-content blockquote {
+  margin: 0 0 30px 0; }
+/* line 51, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_typography.scss */
+.entry-content hr {
+  border: none;
+  background: #edf6fa;
+  height: 1px;
+  width: 690px;
+  margin: 60px 0; }
+/* line 58, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_typography.scss */
+.entry-content blockquote {
+  background: #edf6fa;
+  padding: 30px 30px 0 30px;
+  display: block;
+  overflow: hidden;
+  font-style: italic; }
+/* line 65, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_typography.scss */
+.entry-content ol {
+  padding-left: 60px; }
+/* line 68, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_typography.scss */
+.entry-content ul {
+  padding-left: 60px;
+  color: #4e9ec4;
+  list-style-type: none; }
+  /* line 72, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_typography.scss */
+  .entry-content ul li {
+    color: #485056;
+    position: relative;
+    margin-bottom: 10px; }
+  /* line 77, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_typography.scss */
+  .entry-content ul li:before {
+    content: "•";
+    color: #4e9ec4;
+    position: absolute;
+    left: -20px;
+    display: block;
+    font-size: 30px;
+    height: 20px;
+    width: 10px;
+    line-height: 22px; }
+
+/*-------------- links ---------------*/
+/* line 91, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_typography.scss */
+a {
+  color: #4e9ec4;
+  color: #173D58;
+  font-weight: bold;
+  text-decoration: none; }
+
+/* line 97, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_typography.scss */
+a:visited {
+  color: #4e9ec4;
+  color: #173D58; }
+
+/* line 101, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_typography.scss */
+a:hover {
+  color: #4e9ec4;
+  color: #173D58;
+  text-decoration: underline; }
+
+/* line 107, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_typography.scss */
+#sidebar a:hover, header a:hover {
+  color: white;
+  text-decoration: none; }
+
+/* line 112, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_typography.scss */
+.navigation, .entry-meta {
+  font-variant: small-caps;
+  color: #a4b5c0; }
+  /* line 115, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_typography.scss */
+  .navigation a, .entry-meta a {
+    color: #a4b5c0;
+    font-weight: normal; }
+    /* line 118, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_typography.scss */
+    .navigation a:hover, .entry-meta a:hover {
+      color: #4e9ec4; }
+
+/* line 126, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_typography.scss */
+.wp-caption-text {
+  font-size: 20px;
+  color: #7a8d99; }
+
+/* line 130, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_typography.scss */
+.credit {
+  font-size: 16px;
+  color: #7a8d99;
+  font-size: 12px; }
+
+@-webkit-keyframes show-content {
+  /* line 2, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_animations.scss */
+  0% {
+    -webkit-transform: rotate(-0.5deg);
+    transform: rotate(-0.5deg);
+    left: -100px; }
+
+  /* line 6, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_animations.scss */
+  100% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+    left: 0px; } }
+
+@keyframes show-content {
+  /* line 2, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_animations.scss */
+  0% {
+    -webkit-transform: rotate(-0.5deg);
+    -ms-transform: rotate(-0.5deg);
+    transform: rotate(-0.5deg);
+    left: -100px; }
+
+  /* line 6, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_animations.scss */
+  100% {
+    -webkit-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+    left: 0px; } }
+
+@-webkit-keyframes slide-photos {
+  /* line 13, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_animations.scss */
+  0% {
+    background-position: -40px;
+    opacity: 1; }
+
+  /* line 17, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_animations.scss */
+  100% {
+    background-position: 0px;
+    opacity: 1; } }
+
+@keyframes slide-photos {
+  /* line 13, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_animations.scss */
+  0% {
+    background-position: -40px;
+    opacity: 1; }
+
+  /* line 17, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_animations.scss */
+  100% {
+    background-position: 0px;
+    opacity: 1; } }
+
+@-webkit-keyframes zoom-out {
+  /* line 24, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_animations.scss */
+  0% {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1); }
+
+  /* line 27, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_animations.scss */
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1); } }
+
+@keyframes zoom-out {
+  /* line 24, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_animations.scss */
+  0% {
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1); }
+
+  /* line 27, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_animations.scss */
+  100% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1); } }
+
+/* line 32, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_animations.scss */
+.background {
+  -webkit-animation: zoom-out 900ms ease-out;
+  animation: zoom-out 900ms ease-out; }
+
+/* line 41, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_animations.scss */
+.inner:before, .inner:after {
+  -webkit-animation: slide-photos 900ms ease-out 500ms;
+  animation: slide-photos 900ms ease-out 500ms;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards; }
+
+/* line 1, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_notebook.scss */
+.background {
+  background: url("../images/bg-blurred3.jpg") no-repeat;
+  -webkit-background-size: cover;
+  background-size: cover;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  z-index: 0; }
+
+/* line 10, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_notebook.scss */
+.main {
+  background: url("../images/content-bg-middle.png") repeat-y top right;
+  -webkit-transition: all 300ms 0ms;
+  -webkit-transition-delay: ease-out;
+  -webkit-transition: all 300ms 0ms ease-out;
+  transition: all 300ms 0ms ease-out; }
+  /* line 14, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_notebook.scss */
+  .main:before, .main:after {
+    content: "";
+    width: 100%;
+    height: 30px;
+    position: absolute;
+    left: 0px; }
+  /* line 21, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_notebook.scss */
+  .main:before {
+    background: url("../images/content-bg-top.png") no-repeat top right;
+    top: -30px; }
+  /* line 28, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_notebook.scss */
+  .main:after {
+    background: url("../images/content-bg-bottom.png") no-repeat bottom right;
+    bottom: -30px; }
+
+/* line 37, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_notebook.scss */
+.inner {
+  background: url("../images/stitch.png") repeat-y top right; }
+  /* line 40, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_notebook.scss */
+  .inner:before, .inner:after {
+    position: absolute;
+    display: block;
+    content: " ";
+    z-index: 200;
+    opacity: 0;
+    overflow: hidden; }
+    @media screen and (max-width: 320px) {
+      /* line 40, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_notebook.scss */
+      .inner:before, .inner:after {
+        display: none; } }
+  /* line 51, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_notebook.scss */
+  .inner:before {
+    background: url("../images/decor1.png") no-repeat;
+    height: 274px;
+    width: 83px;
+    top: 1000px;
+    right: -48px; }
+  /* line 58, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_notebook.scss */
+  .inner:after {
+    background: url("../images/decor2.png") no-repeat;
+    width: 78px;
+    height: 209px;
+    top: 300px;
+    right: -39px; }
+
+/* line 1, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_blog.scss */
+.back-to-home {
+  position: absolute;
+  display: block;
+  top: 18px;
+  left: 23px;
+  font-size: 14px; }
+
+/* line 9, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_blog.scss */
+.post-summary {
+  margin-bottom: 60px;
+  /* For modern browsers */
+  /* For IE 6/7 (trigger hasLayout) */
+  *zoom: 1; }
+  /* line 35, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_mixins.scss */
+  .post-summary:before, .post-summary:after {
+    content: "";
+    display: table; }
+  /* line 39, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_mixins.scss */
+  .post-summary:after {
+    clear: both; }
+  /* line 12, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_blog.scss */
+  .post-summary .meta {
+    margin-bottom: 20px; }
+  /* line 15, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_blog.scss */
+  .post-summary .post-title {
+    margin-bottom: 10px;
+    font-size: 36px; }
+  /* line 19, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_blog.scss */
+  .post-summary .post-thumbnail {
+    margin-bottom: 20px; }
+
+/* line 26, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_blog.scss */
+.post-title {
+  font-size: 40px;
+  line-height: 1.3;
+  font-weight: bold;
+  color: #173D58; }
+  @media screen and (max-width: 900px) {
+    /* line 26, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_blog.scss */
+    .post-title {
+      font-size: 30px; } }
+
+/* line 37, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_blog.scss */
+.post-thumbnail {
+  padding: 10px;
+  background: white;
+  margin-bottom: 30px;
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.35);
+  position: relative;
+  width: auto !important; }
+  /* line 44, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_blog.scss */
+  .post-thumbnail a {
+    display: block;
+    overflow: hidden;
+    max-height: 280px; }
+  /* line 49, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_blog.scss */
+  .post-thumbnail img {
+    display: block;
+    width: 100%;
+    height: auto; }
+  /* line 54, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_blog.scss */
+  .post-thumbnail .wp-caption-text {
+    text-align: center;
+    margin: 0;
+    padding-top: 15px;
+    color: #a4b5c0;
+    font-size: 16px; }
+  /* line 61, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_blog.scss */
+  .post-thumbnail .credit {
+    margin-top: 7px; }
+    /* line 63, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_blog.scss */
+    .post-thumbnail .credit a {
+      color: #7a8d99; }
+  /* line 67, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_blog.scss */
+  .post-thumbnail:before, .post-thumbnail:after {
+    position: absolute;
+    content: "";
+    height: 110px;
+    width: 110px;
+    z-index: 10; }
+  /* line 74, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_blog.scss */
+  .post-thumbnail:before {
+    background: url("../images/tape1.png");
+    top: -25px;
+    right: -31px; }
+  /* line 79, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_blog.scss */
+  .post-thumbnail:after {
+    background: url("../images/tape2.png");
+    bottom: -25px;
+    left: -31px; }
+
+/* line 85, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_blog.scss */
+.border-bottom, .section-header, .post-meta {
+  padding-bottom: 10px;
+  border-bottom: 1px dotted #ccc;
+  margin-bottom: 10px; }
+
+/* line 93, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_blog.scss */
+.post-meta {
+  margin-bottom: 30px;
+  font-size: 14px;
+  line-height: 26px;
+  /* For modern browsers */
+  /* For IE 6/7 (trigger hasLayout) */
+  *zoom: 1; }
+  /* line 35, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_mixins.scss */
+  .post-meta:before, .post-meta:after {
+    content: "";
+    display: table; }
+  /* line 39, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_mixins.scss */
+  .post-meta:after {
+    clear: both; }
+  /* line 102, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_blog.scss */
+  .post-meta .back {
+    display: block; }
+    @media screen and (min-width: 320px) and (max-width: 900px) {
+      /* line 102, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_blog.scss */
+      .post-meta .back {
+        text-align: center;
+        margin-bottom: 10px; } }
+    @media screen and (min-width: 1300px) {
+      /* line 102, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_blog.scss */
+      .post-meta .back {
+        float: left;
+        position: relative;
+        top: 2px; } }
+  /* line 114, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_blog.scss */
+  .post-meta .rss, .post-meta .github {
+    display: inline-block;
+    margin-right: 20px; }
+  /* line 118, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_blog.scss */
+  .post-meta .twitter {
+    position: relative;
+    top: 5px;
+    display: inline-block; }
+    /* line 122, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_blog.scss */
+    .post-meta .twitter iframe {
+      width: 90px !important;
+      margin: 0; }
+  /* line 127, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_blog.scss */
+  .post-meta .meta-date {
+    font-variant: small-caps;
+    letter-spacing: 1px;
+    float: left; }
+    @media screen and (max-width: 900px) {
+      /* line 127, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_blog.scss */
+      .post-meta .meta-date {
+        float: none;
+        text-align: center; } }
+  /* line 136, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_blog.scss */
+  .post-meta .meta-byline {
+    color: #7a8d99;
+    float: right; }
+    @media screen and (max-width: 900px) {
+      /* line 136, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_blog.scss */
+      .post-meta .meta-byline {
+        float: none;
+        text-align: center; } }
+  /* line 144, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_blog.scss */
+  .post-meta .meta-author {
+    font-style: italic; }
+
+/* line 149, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_blog.scss */
+.post {
+  padding-bottom: 60px;
+  margin-bottom: 0; }
+
+/* line 153, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_blog.scss */
+.post-content {
+  padding-bottom: 40px; }
+  /* line 157, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_blog.scss */
+  .post-content p, .post-content h2, .post-content h3, .post-content h4, .post-content ul, .post-content ol, .post-content hr, .post-content blockquote, .post-content pre, .post-content .highlight {
+    margin-bottom: 30px; }
+    @media screen and (max-width: 900px) {
+      /* line 157, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_blog.scss */
+      .post-content p, .post-content h2, .post-content h3, .post-content h4, .post-content ul, .post-content ol, .post-content hr, .post-content blockquote, .post-content pre, .post-content .highlight {
+        margin-bottom: 20px; } }
+  /* line 163, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_blog.scss */
+  .post-content > p:first-child {
+    font-size: 24px; }
+    @media screen and (min-width: 320px) and (max-width: 900px) {
+      /* line 163, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_blog.scss */
+      .post-content > p:first-child {
+        font-size: 20px; } }
+  /* line 169, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_blog.scss */
+  .post-content ul, .post-content ol {
+    padding-left: 20px; }
+  /* line 172, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_blog.scss */
+  .post-content h3 {
+    border-bottom: 1px dotted #f6f7f9; }
+    @media screen and (min-width: 320px) and (max-width: 900px) {
+      /* line 172, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_blog.scss */
+      .post-content h3 {
+        font-size: 24px;
+        line-height: 1.5; } }
+    @media screen and (min-width: 900px) and (max-width: 1300px) {
+      /* line 172, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_blog.scss */
+      .post-content h3 {
+        font-size: 30px;
+        line-height: 1.8; } }
+  /* line 184, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_blog.scss */
+  .post-content h2 strong a, .post-content h3 strong a {
+    font-size: 16px; }
+  /* line 188, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_blog.scss */
+  .post-content hr {
+    margin-bottom: 30px;
+    border-bottom: 1px dotted #f6f7f9;
+    border-top: 0; }
+  /* line 193, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_blog.scss */
+  .post-content h5 {
+    display: inline-block;
+    background: white;
+    text-transform: uppercase;
+    -o-border-radius: 3px;
+    border-radius: 3px;
+    padding: 3px 6px;
+    font-size: 14px;
+    font-weight: normal; }
+  /* line 202, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_blog.scss */
+  .post-content .pullcenter {
+    width: 50%;
+    margin: 0 auto 40px auto;
+    cursor: pointer; }
+    /* line 206, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_blog.scss */
+    .post-content .pullcenter img {
+      border: 0; }
+    /* line 209, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_blog.scss */
+    .post-content .pullcenter figcaption {
+      font-style: italic;
+      font-size: 14px;
+      border-top: 1px solid #eaf2f6;
+      padding-top: 10px;
+      margin-top: 10px;
+      color: #7a8d99;
+      margin-bottom: 20px; }
+  /* line 219, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_blog.scss */
+  .post-content .video, .post-content iframe {
+    margin-bottom: 40px; }
+  /* line 222, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_blog.scss */
+  .post-content blockquote {
+    padding: 20px 40px;
+    border-top: 1px solid #dee5e9;
+    border-bottom: 1px solid #dee5e9;
+    font-style: italic; }
+    /* line 227, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_blog.scss */
+    .post-content blockquote.pull {
+      padding: 20px 0; }
+    /* line 230, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_blog.scss */
+    .post-content blockquote p:last-child {
+      margin: 0; }
+    /* line 233, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_blog.scss */
+    .post-content blockquote cite {
+      display: block;
+      text-align: right;
+      margin-top: 5px;
+      font-weight: bold; }
+  /* line 241, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_blog.scss */
+  .post-content li ul {
+    padding-top: 10px; }
+
+/* line 247, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_blog.scss */
+.post-share {
+  margin-bottom: 40px; }
+  /* line 249, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_blog.scss */
+  .post-share h4 {
+    display: inline-block;
+    margin: 0; }
+  /* line 253, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_blog.scss */
+  .post-share .post-share-option {
+    display: inline-block;
+    position: relative; }
+    /* line 256, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_blog.scss */
+    .post-share .post-share-option.twitter {
+      top: 4px;
+      margin-left: 30px; }
+    /* line 260, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_blog.scss */
+    .post-share .post-share-option.gplus {
+      top: 4px; }
+
+/* line 265, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_blog.scss */
+.post-block {
+  margin-bottom: 60px; }
+
+/* line 268, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_blog.scss */
+.post-author {
+  position: relative;
+  border-bottom: 1px dotted #f6f7f9;
+  /* For modern browsers */
+  /* For IE 6/7 (trigger hasLayout) */
+  *zoom: 1; }
+  @media screen and (min-width: 320px) and (max-width: 900px) {
+    /* line 268, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_blog.scss */
+    .post-author {
+      padding: 40px 0; } }
+  @media screen and (min-width: 900px) and (max-width: 1300px) {
+    /* line 268, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_blog.scss */
+    .post-author {
+      padding: 40px 60px; } }
+  /* line 35, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_mixins.scss */
+  .post-author:before, .post-author:after {
+    content: "";
+    display: table; }
+  /* line 39, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_mixins.scss */
+  .post-author:after {
+    clear: both; }
+  /* line 280, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_blog.scss */
+  .post-author .portrait {
+    -o-border-radius: 100px;
+    border-radius: 100px;
+    height: 80px;
+    width: 80px;
+    float: left;
+    display: block; }
+    @media screen and (min-width: 320px) and (max-width: 900px) {
+      /* line 280, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_blog.scss */
+      .post-author .portrait {
+        margin: 0 20px 20px 0; } }
+    @media screen and (min-width: 900px) and (max-width: 1300px) {
+      /* line 280, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_blog.scss */
+      .post-author .portrait {
+        margin-right: 40px; } }
+  /* line 293, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_blog.scss */
+  .post-author .post-author-bio {
+    margin-left: 100px;
+    font-size: 15px; }
+
+/*.post-nav{
+  @include cf;
+  font-size: 16px;
+  .prev{
+    display:block;
+    float:left;
+  }
+  .next{
+    display:block;
+    float:right;
+  }
+}*/
+/* line 310, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_blog.scss */
+.note {
+  background: #eaf2f6;
+  background: -webkit-linear-gradient(125deg, rgba(253, 228, 0, 0.2) 0%, rgba(253, 228, 0, 0.1) 90%);
+  background: -webkit-linear-gradient(325deg, rgba(253, 228, 0, 0.2) 0%, rgba(253, 228, 0, 0.1) 90%);
+  background: linear-gradient(125deg, rgba(253, 228, 0, 0.2) 0%, rgba(253, 228, 0, 0.1) 90%);
+  padding: 30px;
+  margin-bottom: 30px;
+  line-height: 1.6; }
+  /* line 316, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_blog.scss */
+  .note p {
+    margin-bottom: 20px; }
+  /* line 319, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_blog.scss */
+  .note h3 {
+    margin: 0 0 10px 0;
+    border: 0;
+    font-size: 20px; }
+  /* line 324, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_blog.scss */
+  .note ul {
+    margin: 0; }
+  /* line 327, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_blog.scss */
+  .note.chapter {
+    background: #eaf2f6;
+    background: -webkit-linear-gradient(125deg, #e2e0e9 0%, rgba(226, 224, 233, 0.5) 90%);
+    background: -webkit-linear-gradient(325deg, #e2e0e9 0%, rgba(226, 224, 233, 0.5) 90%);
+    background: linear-gradient(125deg, #e2e0e9 0%, rgba(226, 224, 233, 0.5) 90%); }
+  /* line 331, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_blog.scss */
+  .note p:last-child {
+    margin-bottom: 0; }
+
+/* line 335, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_blog.scss */
+.blurb {
+  margin-bottom: 60px;
+  background: #eaf2f6;
+  padding: 12px;
+  /* For modern browsers */
+  /* For IE 6/7 (trigger hasLayout) */
+  *zoom: 1; }
+  /* line 35, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_mixins.scss */
+  .blurb:before, .blurb:after {
+    content: "";
+    display: table; }
+  /* line 39, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_mixins.scss */
+  .blurb:after {
+    clear: both; }
+  /* line 341, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_blog.scss */
+  .blurb h4 {
+    float: left;
+    margin: 0;
+    width: 60px;
+    text-transform: uppercase;
+    line-height: 45px; }
+  /* line 348, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_blog.scss */
+  .blurb p {
+    margin: 0 0 0 70px;
+    font-style: italic;
+    font-size: 16px; }
+
+/* line 354, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_blog.scss */
+.category {
+  text-transform: uppercase; }
+
+/* line 357, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_blog.scss */
+.post-newsletter {
+  background: #eaf2f6;
+  background: -webkit-linear-gradient(125deg, rgba(253, 228, 0, 0.2) 0%, rgba(253, 228, 0, 0.1) 90%);
+  background: -webkit-linear-gradient(325deg, rgba(253, 228, 0, 0.2) 0%, rgba(253, 228, 0, 0.1) 90%);
+  background: linear-gradient(125deg, rgba(253, 228, 0, 0.2) 0%, rgba(253, 228, 0, 0.1) 90%);
+  border-bottom: 1px dotted #f6f7f9;
+  position: relative; }
+  @media screen and (min-width: 320px) and (max-width: 900px) {
+    /* line 357, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_blog.scss */
+    .post-newsletter {
+      padding: 30px 20px; } }
+  @media screen and (min-width: 900px) and (max-width: 1300px) {
+    /* line 357, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_blog.scss */
+    .post-newsletter {
+      padding: 60px; } }
+
+/* line 369, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_blog.scss */
+.blog-comments {
+  padding-top: 60px;
+  position: relative; }
+
+/* line 373, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_blog.scss */
+.discovery-main, #discovery-top {
+  display: none !important; }
+
+/* line 2, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_figures.scss */
+figure {
+  width: 100%;
+  margin: 0 auto 40px auto; }
+  /* line 17, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_figures.scss */
+  figure.large {
+    width: 90%; }
+  /* line 20, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_figures.scss */
+  figure img {
+    -webkit-transition: all 300ms 0ms;
+    -webkit-transition-delay: ease-out;
+    -webkit-transition: all 300ms 0ms ease-out;
+    transition: all 300ms 0ms ease-out;
+    border: 10px solid white;
+    width: 100%;
+    display: block; }
+  /* line 27, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_figures.scss */
+  figure.no-border img {
+    border: none; }
+  /* line 32, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_figures.scss */
+  figure.with-padding img {
+    padding: 40px; }
+  /* line 36, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_figures.scss */
+  figure figcaption {
+    font-style: italic;
+    font-size: 16px;
+    padding-top: 10px;
+    color: #7a8d99;
+    text-align: center; }
+  /* line 43, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_figures.scss */
+  figure.portrait {
+    width: 160px; }
+    @media screen and (min-width: 900px) and (max-width: 1300px) {
+      /* line 43, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_figures.scss */
+      figure.portrait {
+        float: left;
+        margin: 0 40px 40px 0; } }
+    /* line 49, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_figures.scss */
+    figure.portrait figcaption {
+      text-align: center; }
+  @media screen and (min-width: 900px) and (max-width: 1300px) {
+    /* line 54, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_figures.scss */
+    figure.pull-right {
+      width: 300px;
+      float: right;
+      margin: 0 -150px 40px 60px; }
+    /* line 59, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_figures.scss */
+    figure.pull-left {
+      width: 300px;
+      float: left;
+      margin: 0 60px 40px -150px; } }
+  @media screen and (min-width: 900px) and (max-width: 1300px) {
+    /* line 71, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_figures.scss */
+    figure.zoom:hover img {
+      background: white;
+      -webkit-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.2);
+      box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.2);
+      -webkit-transform: scale(1.5, 1.5);
+      -ms-transform: scale(1.5, 1.5);
+      transform: scale(1.5, 1.5); } }
+  /* line 78, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_figures.scss */
+  figure.no-zoom:hover img {
+    -webkit-transform: scale(1, 1);
+    -ms-transform: scale(1, 1);
+    transform: scale(1, 1);
+    -webkit-box-shadow: none;
+    box-shadow: none; }
+
+/* line 84, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_figures.scss */
+blockquote.pull {
+  font-size: 24px;
+  line-height: 1.5; }
+  /* line 87, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_figures.scss */
+  blockquote.pull:before {
+    content: '\201C'; }
+  /* line 90, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_figures.scss */
+  blockquote.pull:after {
+    content: '\201D'; }
+/* line 94, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_figures.scss */
+blockquote.pull-center {
+  text-align: center; }
+@media screen and (min-width: 900px) and (max-width: 1300px) {
+  /* line 98, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_figures.scss */
+  blockquote.pull-right {
+    width: 300px;
+    float: right;
+    margin: 0 -150px 40px 60px; }
+  /* line 103, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_figures.scss */
+  blockquote.pull-left {
+    width: 300px;
+    float: left;
+    margin: 0 60px 40px -150px; } }
+
+/* line 1, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_sidebar.scss */
+.sidebar {
+  color: white; }
+  /* line 3, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_sidebar.scss */
+  .sidebar h1, .sidebar h2, .sidebar h3, .sidebar h4, .sidebar h5 {
+    color: white; }
+
+/* line 8, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_sidebar.scss */
+.sidebar {
+  z-index: 10;
+  text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.6);
+  margin: 0 30px;
+  width: 240px;
+  text-align: center; }
+  @media screen and (max-width: 900px) {
+    /* line 8, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_sidebar.scss */
+    .sidebar {
+      -webkit-transition: all 300ms 0ms;
+      -webkit-transition-delay: ease-out;
+      -webkit-transition: all 300ms 0ms ease-out;
+      transition: all 300ms 0ms ease-out;
+      position: absolute;
+      top: 0px;
+      right: -100%; }
+      /* line 16, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_sidebar.scss */
+      .show-sidebar .sidebar {
+        right: 50%;
+        margin-right: -120px; } }
+  @media screen and (min-width: 900px) and (max-width: 1300px) {
+    /* line 8, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_sidebar.scss */
+    .sidebar {
+      position: fixed;
+      right: 10px;
+      top: 70px; } }
+  @media screen and (min-width: 1300px) {
+    /* line 8, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_sidebar.scss */
+    .sidebar {
+      position: fixed;
+      top: 70px;
+      left: 940px; } }
+  /* line 37, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_sidebar.scss */
+  .sidebar a {
+    color: white; }
+
+/* line 44, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_sidebar.scss */
+.sidebar-title {
+  margin-bottom: 15px; }
+  /* line 46, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_sidebar.scss */
+  .sidebar-title a {
+    margin: 0 auto 20px auto;
+    line-height: 1.3;
+    display: block;
+    background: rgba(7, 22, 32, 0.6);
+    border-radius: 50%;
+    padding: 30px;
+    width: 140px;
+    height: 140px;
+    -webkit-transition: all 300ms 0ms;
+    -webkit-transition-delay: ease-out;
+    -webkit-transition: all 300ms 0ms ease-out;
+    transition: all 300ms 0ms ease-out; }
+    /* line 56, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_sidebar.scss */
+    .sidebar-title a:hover {
+      text-decoration: none;
+      background: rgba(7, 22, 32, 0.3);
+      -webkit-box-shadow: 0px 0px 20px 2px rgba(255, 255, 255, 0.3);
+      box-shadow: 0px 0px 20px 2px rgba(255, 255, 255, 0.3); }
+  /* line 62, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_sidebar.scss */
+  .sidebar-title span {
+    display: block; }
+  /* line 65, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_sidebar.scss */
+  .sidebar-title .s1 {
+    font-size: 16px; }
+  /* line 68, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_sidebar.scss */
+  .sidebar-title .s2 {
+    font-size: 30px;
+    background: url("http://assets1.folyo.me/assets/logo-white-41e8dee74424daa4600dbbe8f1222a56.png") 50% 50% no-repeat;
+    -webkit-background-size: 100% auto;
+    background-size: 100% auto;
+    text-indent: 100%;
+    white-space: nowrap;
+    overflow: hidden; }
+  /* line 76, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_sidebar.scss */
+  .sidebar-title .s3 {
+    font-size: 16px; }
+
+/* line 80, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_sidebar.scss */
+.sidebar-intro {
+  color: rgba(255, 255, 255, 0.9);
+  background: rgba(7, 22, 32, 0.6);
+  padding: 20px; }
+
+/* line 92, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_sidebar.scss */
+.sidebar-toggle {
+  position: absolute;
+  display: none;
+  top: 10px;
+  right: 10px;
+  height: 40px;
+  width: 40px;
+  padding: 5px;
+  overflow: hidden; }
+  @media screen and (max-width: 900px) {
+    /* line 92, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_sidebar.scss */
+    .sidebar-toggle {
+      display: block; } }
+  /* line 104, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_sidebar.scss */
+  .sidebar-toggle img {
+    height: 100%;
+    width: 100%;
+    display: block;
+    -webkit-filter: drop-shadow(0px 1px 1px rgba(0, 0, 0, 0.25)); }
+  /* line 111, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_sidebar.scss */
+  .sidebar-toggle span {
+    display: block;
+    height: 30px;
+    width: 30px;
+    -webkit-background-size: 30px 30px;
+    background-size: 30px 30px;
+    position: absolute;
+    -webkit-transition: all 300ms 0ms;
+    -webkit-transition-delay: ease-out;
+    -webkit-transition: all 300ms 0ms ease-out;
+    transition: all 300ms 0ms ease-out; }
+    /* line 118, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_sidebar.scss */
+    .sidebar-toggle span.open {
+      left: 5px; }
+      /* line 121, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_sidebar.scss */
+      .show-sidebar .sidebar-toggle span.open {
+        left: -200%; }
+    /* line 125, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_sidebar.scss */
+    .sidebar-toggle span.close {
+      left: 200%; }
+      /* line 128, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_sidebar.scss */
+      .show-sidebar .sidebar-toggle span.close {
+        left: 5px; }
+
+/* line 1, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_pagination.scss */
+.blog-pagination {
+  /* For modern browsers */
+  /* For IE 6/7 (trigger hasLayout) */
+  *zoom: 1; }
+  /* line 35, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_mixins.scss */
+  .blog-pagination:before, .blog-pagination:after {
+    content: "";
+    display: table; }
+  /* line 39, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_mixins.scss */
+  .blog-pagination:after {
+    clear: both; }
+  /* line 3, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_pagination.scss */
+  .blog-pagination .pagination-prev, .blog-pagination .pagination-next {
+    width: 46%; }
+  /* line 6, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_pagination.scss */
+  .blog-pagination .pagination-prev {
+    float: left;
+    margin-right: 8%; }
+  /* line 10, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_pagination.scss */
+  .blog-pagination .pagination-next {
+    float: right;
+    text-align: right; }
+  /* line 14, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_pagination.scss */
+  .blog-pagination a {
+    font-size: 15px; }
+
+/* line 1, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_newsletter.scss */
+.newsletter {
+  line-height: 1.6;
+  font-size: 16px;
+  margin-bottom: 0;
+  padding: 10px 0;
+  text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.4);
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.65);
+  padding: 20px;
+  -webkit-box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.3);
+  color: #485056; }
+  /* line 13, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_newsletter.scss */
+  .newsletter .newsletter-title {
+    margin-bottom: 5px;
+    color: #485056;
+    font-size: 22px; }
+  /* line 18, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_newsletter.scss */
+  .newsletter .newsletter-intro {
+    margin-bottom: 10px;
+    line-height: 1.5; }
+  /* line 22, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_newsletter.scss */
+  .newsletter form {
+    /* For modern browsers */
+    /* For IE 6/7 (trigger hasLayout) */
+    *zoom: 1; }
+    /* line 35, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_mixins.scss */
+    .newsletter form:before, .newsletter form:after {
+      content: "";
+      display: table; }
+    /* line 39, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_mixins.scss */
+    .newsletter form:after {
+      clear: both; }
+  /* line 25, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_newsletter.scss */
+  .newsletter .email {
+    display: block;
+    float: left;
+    width: 67%;
+    margin-right: 5%;
+    border: none;
+    padding: 8px 10px;
+    font-size: 15px;
+    -webkit-box-shadow: inset 0px 1px 2px rgba(0, 0, 0, 0.2);
+    box-shadow: inset 0px 1px 2px rgba(0, 0, 0, 0.2);
+    line-height: 1.3; }
+  /* line 36, /Users/sacha/Dev/folyoblog/source/stylesheets/partials/_newsletter.scss */
+  .newsletter .submit {
+    display: block;
+    float: left;
+    width: 28%;
+    background: rgba(7, 22, 32, 0.6);
+    color: white;
+    font-weight: bold;
+    border: none;
+    font-size: 15px;
+    line-height: 1.3;
+    padding: 8px 12px;
+    min-height: 38px; }

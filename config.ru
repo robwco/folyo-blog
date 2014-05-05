@@ -11,7 +11,7 @@ require 'rack/rewrite'
 # use Rack::SslEnforcer, :except_hosts => '0.0.0.0'
 
 use Rack::Rewrite do
-  r301 %r{\/....\/..\/..\/(.*)}, '/blog/$1'
+  r301 %r{^\/blog\/(.*)}, '/$1'
 end
 
 # Build the static site when the app boots
