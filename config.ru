@@ -6,9 +6,9 @@ require "rack"
 require "middleman/rack"
 require "rack/contrib/try_static"
 require 'rack/rewrite'
-require 'rack/ssl-enforcer'
 
-use Rack::SslEnforcer, :except_hosts => '0.0.0.0'
+# require 'rack/ssl-enforcer'
+# use Rack::SslEnforcer, :except_hosts => '0.0.0.0'
 
 use Rack::Rewrite do
   r301 %r{\/....\/..\/..\/(.*)}, '/blog/$1'
