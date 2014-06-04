@@ -40,6 +40,13 @@ $medium-break: 1300px;
     @content;
   }
 }
+@mixin medium-large(){
+  // 0px to 800px
+  // single column
+  @media screen and (min-width: $small-break) {
+    @content;
+  }
+}
 
 $total-columns  : 12;
 $column-width   : 20px;

@@ -11,9 +11,12 @@ body, input, textarea, p, button{
 	}
 
 }
+.secondary-font{
+	font-family: 'Crete Round', "crete-round", serif;
+}
 h1, h2, h3, h4, h5, .navigation, .credit{
 	// font-family:"flood-std", "ff-market-web","Proxima Nova";
-	font-family: 'Crete Round', "crete-round", serif;
+	@extend .secondary-font;
 	font-weight: normal;
 	line-height:1.2;
 	color: #24587C;

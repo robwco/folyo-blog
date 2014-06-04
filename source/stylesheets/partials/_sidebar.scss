@@ -38,10 +38,14 @@
     color: white;
   }
 }
+.sidebar-top{
+  pointer-events:none;
+}
 .sidebar-block{
   // margin-bottom: 20px;
 }
 .sidebar-title{
+  pointer-events:auto;
   margin-bottom: 15px;
   a{
     margin: 0 auto 20px auto;
@@ -52,11 +56,12 @@
     padding: 30px;
     width: 140px;
     height: 140px;
-    @include animate;
+    @include single-transition(all, 500ms, 0ms, cubic-bezier(0.175, 0.885, 0.32, 1.275));
     &:hover{
       text-decoration: none;
       background: rgba(7, 22, 32, 0.3);
       @include box-shadow(0px 0px 20px 2px white(0.3));
+      transform: scale(1.15);
     }
   }
   span{
@@ -78,16 +83,39 @@
   }
 }
 .sidebar-intro{
+  opacity: 0;
+  top: -20px;
+  @include single-transition(all, 300ms, 200ms, ease-out);
+  @extend .secondary-font;
   // line-height: 1.6;
-  // font-size: 16px;
-  // margin-bottom: 0;
+  font-size: 15px;
+  margin-bottom: $halfspacing;
   // padding: 10px 0;
   // border-top: 1px solid white(0.5);
   // border-bottom: 1px solid white(0.5);
   // background: white(0.2);
   color: white(0.9);
   background: rgba(7, 22, 32, 0.6);
-  padding: 20px;
+  padding: 15px 10px;
+  position: relative;
+  &:after {
+    bottom: 100%;
+    left: 50%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    border-color: rgba(7, 22, 32, 0);
+    border-bottom-color: rgba(7, 22, 32, 0.6);
+    border-width: 10px;
+    margin-left: -10px;
+  }
+  .sidebar-top:hover &{
+    opacity: 1;
+    top: 10px
+  }
 }
 .sidebar-toggle{
   @include xsmall-small{
@@ -105,8 +133,7 @@
     height: 100%;
     width: 100%;
     display: block;
-    -webkit-filter: drop-shadow(0px 1px 1px rgba(0,0,0,0.25));
-
+    filter: drop-shadow(0px 1px 1px rgba(0,0,0,0.25));
   }
   span{
     display: block;

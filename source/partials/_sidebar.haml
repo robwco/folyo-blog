@@ -1,14 +1,18 @@
 .sidebar
-  %h2.sidebar-title.sidebar-block
-    %a{:href => "/"}
-      %span.s1 the
-      %span.s2 Folyo 
-      %span.s3 notebook
-  .sidebar-intro.sidebar-block <a href="http://folyo.me">Folyo</a> helps you find the best freelance designers for your project. 
+  .sidebar-top
+    %h2.sidebar-title.sidebar-block
+      %a{:href => "http://folyo.me"}
+        %span.s1 the
+        %span.s2 Folyo 
+        %span.s3 notebook
+    .sidebar-intro.sidebar-block Folyo helps you find the best freelance designers for your project. 
   .sidebar-block.newsletter
-    %h4.newsletter-title Join Our Newsletter
-    %p.newsletter-intro Receive weekly tips and advice on design
-
+    / %h4.newsletter-title Join Our Newsletter
+    / %p.newsletter-intro Receive weekly tips and advice on design
+    %a.newsletter-dismiss{:href => 'javascript:void()'}
+      %img{:src => '/images/menu-close.svg'}
+    %h4.newsletter-title Want More?
+    %p.newsletter-intro Join our newsletter to receive our guide on the <strong>9&nbsp;things that make a designer good</strong>:
     =partial("partials/newsletter_form")
 
   / .block.follow
