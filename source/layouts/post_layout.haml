@@ -23,14 +23,11 @@
 
       %h1.post-title{:itemprop => "name"}=post.data.title
 
-
-
-
       .post-content
         =find_and_preserve do
           =yield
     .post-share
-      %h4 Share this article:
+      %h4 Share:
       .post-share-option.twitter
         :plain
           <a href="https://twitter.com/share" class="twitter-share-button" data-via="YoFolyo">Tweet</a>
@@ -55,7 +52,7 @@
             var js, fjs = d.getElementsByTagName(s)[0];
             if (d.getElementById(id)) return;
             js = d.createElement(s); js.id = id;
-            js.src = "//connect.facebook.net/fr_FR/all.js#xfbml=1&appId=449721305061869";
+            js.src = "//connect.facebook.net/en_EN/all.js#xfbml=1&appId=449721305061869";
             fjs.parentNode.insertBefore(js, fjs);
           }(document, 'script', 'facebook-jssdk'));</script>
         :plain

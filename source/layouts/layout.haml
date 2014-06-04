@@ -43,7 +43,7 @@
     .background
 
     = yield_content(:back)
-
+    
     %a.sidebar-toggle{:href => 'javascript:void(0)'}
       %span.open
         %img{:src => '/images/menu-open.svg'}
@@ -56,6 +56,8 @@
           =yield
       =partial("partials/sidebar")
 
+    %script{:src => "/javascripts/jquery.fitvids.js"}
+    %script{:src => "/javascripts/jquery.toc.js"}
     %script{:src => "/javascripts/script.js"}
 
     :javascript

@@ -246,9 +246,16 @@
 }
 .post-share{
   margin-bottom: $spacing;
+  border: 1px solid $light-border;
+  border-radius: 10px;
+  padding: 10px 20px;
   h4{
     display: inline-block;
     margin: 0;
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 2px;
   }
   .post-share-option{
     display: inline-block;
@@ -259,6 +266,9 @@
     }
     &.gplus{
       top:4px;
+    }
+    &.facebook{
+      top: -5px;
     }
   }
 }
@@ -308,18 +318,26 @@
   }
 }*/
 .note{
-  background:$light-yellow;
-  @include background(linear-gradient( 125deg, rgba(253,228,0,0.2) 0%, rgba(253,228,0,0.1) 90%));
+  // background:$light-yellow;
+  // @include background(linear-gradient( 125deg, rgba(253,228,0,0.2) 0%, rgba(253,228,0,0.1) 90%));
+  border: 3px double $light-border;
+  // background: $lightgrey2;
+  background: white(0.8);
   padding:30px;
   margin-bottom:30px;
   line-height:1.6;
   p{
     margin-bottom:20px;
+    font-size: 16px;
   }
-  h3{
-    margin:0 0 10px 0;
+  h3, h4{
+    margin:0 0 20px 0;
     border:0;
     font-size:20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-bottom: 1px solid $light-border;
+    padding-bottom: 10px;
   }
   ul{
     margin:0;
@@ -372,4 +390,14 @@
 }
 .discovery-main, #discovery-top{
   display: none !important;
+}
+
+.PDS_Poll{
+  margin-bottom: $spacing;
+}
+#PDI_container8099375 .pds-box{
+  width: 100% !important;
+}
+#PDI_container8099375 .pds-input-label{
+  width: auto !important;
 }

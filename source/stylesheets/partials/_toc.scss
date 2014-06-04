@@ -1,0 +1,32 @@
+.toc{
+  border:2px solid $light-border;
+  padding: 30px;
+  border-radius: 10px;
+  font-size: 16px;
+  position: relative;
+  ul, ol{
+    margin: 0;
+  }
+  li{
+    margin-bottom: 5px;
+  }
+  margin-bottom: $spacing;
+  &:before{
+    position: absolute;
+    content: "Table Of Contents";
+    display: block;
+    left: 50%;
+    top: -25px;
+    font-size: 18px;
+    @extend .secondary-font;
+    width: 210px;
+    margin-left: -105px;
+    background: #F7F7F7;
+    padding: 10px;
+    white-space: nowrap;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #A7ACAF;
+  }
+}
