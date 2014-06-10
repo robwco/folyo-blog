@@ -1,3 +1,6 @@
+- if content_for?(:layout) && yield_content(:layout) == "post"
+  - is_post_page = true
+
 .sidebar
   .sidebar-top
     %h2.sidebar-title.sidebar-block
@@ -5,16 +8,17 @@
         %span.s1 the
         %span.s2 Folyo 
         %span.s3 notebook
-        - if content_for?(:layout) && yield_content(:layout) == "post"
+        - if is_post_page
           =partial("partials/progress")
-    - if content_for?(:layout) && yield_content(:layout) == "post"
+    - if is_post_page
       .sidebar-percent
         .sidebar-indicator 0% read
     .sidebar-intro.sidebar-block Folyo helps you find the best freelance designers for your project.
-  .sidebar-widget
-    =partial("partials/newsletter_widget")
-    =partial("partials/share_widget")
-    =partial("partials/nowidgets_widget")
+  - if is_post_page
+    .sidebar-widget
+      =partial("partials/newsletter_widget")
+      =partial("partials/share_widget")
+      =partial("partials/nowidgets_widget")
 
   / .block.follow
   /   %h3.blog-header Twitter
