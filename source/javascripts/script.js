@@ -1,7 +1,44 @@
-showNewsletter = true
+showWidgetOnThisPage = true
 
 $(function(){
-  // $(".video").fitVids();
+
+  // Google Analytics
+
+  var trackEvent = function (category, action, label) {
+    console.log('Tracking Event: '+category+', '+action+', '+label);
+    ga('send', {
+      'hitType': 'event',          // Required.
+      'eventCategory': category,   // Required.
+      'eventAction': action,      // Required.
+      'eventLabel': label,
+      'hitCallback': function () {
+        // put any callback here
+      }
+    });
+  }
+
+  // tracker = new Boba({
+  //   siteName: 'Folyo Blog',
+  //   pageName: $('title').text(),
+  //   defaultCategory: 'category',
+  //   defaultAction: 'action',
+  //   defaultLabel: 'label',
+  //   watch: [
+  //     ['click', '.mt-twitter', trackClick],
+  //     ['click', '.mt-facebook', trackClick]
+  //   ]
+  // })
+
+  $('.widget-share .mt-twitter').click(function(){trackEvent('socialClicks', 'Clicked Widget Twitter', 'clicked Twitter button')});
+  $('.widget-share .mt-facebook').click(function(){trackEvent('socialClicks', 'Clicked Widget Facebook', 'clicked Facebook button')});
+  $('.widget-share .mt-google').click(function(){trackEvent('socialClicks', 'Clicked Widget Google', 'clicked Google button')});
+  $('.post-share .mt-twitter').click(function(){trackEvent('socialClicks', 'Clicked Share Twitter', 'clicked Twitter button')});
+  $('.post-share .mt-facebook').click(function(){trackEvent('socialClicks', 'Clicked Share Facebook', 'clicked Facebook button')});
+  $('.post-share .mt-google').click(function(){trackEvent('socialClicks', 'Clicked Share Google', 'clicked Google button')});
+  $('#newsletter-submit').click(function(){trackEvent('newsletterSubmit', 'Submitted Newsletter', 'Submitted Newsletter')});
+
+  $(".video").fitVids();
+
   $('.sidebar-toggle').click(function(){
     $('body').toggleClass('show-sidebar');
   });
@@ -34,6 +71,28 @@ $(function(){
     'stroke-dashoffset 300ms ease-in-out';
   // Go!
   
+  // --- Widgets ---
+
+  // if newsletter has been submitted or dismissed 3 times or more, show share widget instead
+  
+  if($.cookie('newsletterSubmitted') || $.cookie('newsletterDismissed') >= 3){
+    $('.widget-newsletter').hide();
+    $('.widget-share').show();
+  }
+
+  // if share widget has been dismissed 3 times or more, show noWidgets widget instead
+
+  if($.cookie('shareDismissed') >= 3){
+    $('.widget-newsletter').hide();
+    $('.widget-share').hide();
+    $('.widget-nowidgets').show();
+  }
+
+  // if noWidgets widget has been dismissed 1 time, don't show anything
+
+  if($.cookie('noWidgetsDismissed') >= 1){
+    showWidgetOnThisPage = false;
+  }
 
   // scroll events
 
@@ -56,13 +115,14 @@ $(function(){
     }else if(percent > 40){
       text += " – doing great";
     }
-    $('.sidebar-percent').text(text);
+    $('.sidebar-indicator').text(text);
 
     // show/hide newsletter
-    if(percent > 70 && showNewsletter == true){
-      $('body').addClass('show-newsletter');
+    if(percent > 70 && showWidgetOnThisPage == true){
+      $('body').addClass('show-widget');
+
     }else{
-      $('body').removeClass('show-newsletter');     
+      $('body').removeClass('show-widget');     
     }
   }
 
@@ -71,11 +131,52 @@ $(function(){
     scrollStuff();
   });
 
-  // hide newsletter widget
 
-  $('.newsletter-dismiss').click(function(){
-    $('body').removeClass('show-newsletter');  
-    showNewsletter = false;
+  // new Share(".share-button", {
+  //   networks: {
+  //     google_plus: {
+  //     },
+  //     twitter: {
+  //     },
+  //     facebook: {
+  //     },
+  //     pinterest: {
+  //       enabled: false
+  //     },
+  //     email: {
+  //       enabled: false
+  //     }
+  //   }
+  // });
+
+
+  // submit newsletter
+
+  $('#newsletter-submit').click(function(){
+    $.cookie('newsletterSubmitted', true);
+  });
+
+  // hide widget
+
+  $('.widget-dismiss').click(function(){
+    var p = $(this).parent();
+    var dismissCount = 0;
+    var widgetName = '';
+
+    if(p.hasClass('widget-newsletter'))
+      widgetName = 'newsletter';
+    if(p.hasClass('widget-share'))
+      widgetName = 'share';
+    if(p.hasClass('widget-nowidgets'))
+      widgetName = 'noWidgets';
+    
+    $('body').removeClass('show-widget');  
+    showWidgetOnThisPage = false;
+    dismissCount = parseInt($.cookie(widgetName+'Dismissed') || 0);
+    $.cookie(widgetName+'Dismissed', ++dismissCount); 
+
+    trackEvent("dismissWidget", widgetName+" x "+dismissCount, "Dismissed '"+widgetName+"' widget for the "+dismissCount+" time");
+
   });
 
 });

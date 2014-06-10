@@ -8,16 +8,13 @@
         - if content_for?(:layout) && yield_content(:layout) == "post"
           =partial("partials/progress")
     - if content_for?(:layout) && yield_content(:layout) == "post"
-      .sidebar-percent 0% read
+      .sidebar-percent
+        .sidebar-indicator 0% read
     .sidebar-intro.sidebar-block Folyo helps you find the best freelance designers for your project.
-  .sidebar-block.newsletter
-    / %h4.newsletter-title Join Our Newsletter
-    / %p.newsletter-intro Receive weekly tips and advice on design
-    %a.newsletter-dismiss{:href => 'javascript:void()'}
-      %img{:src => '/images/menu-close.svg'}
-    %h4.newsletter-title Want More?
-    %p.newsletter-intro Join our newsletter to receive our guide on the <strong>9&nbsp;things that make a designer great</strong>:
-    =partial("partials/newsletter_form")
+  .sidebar-widget
+    =partial("partials/newsletter_widget")
+    =partial("partials/share_widget")
+    =partial("partials/nowidgets_widget")
 
   / .block.follow
   /   %h3.blog-header Twitter

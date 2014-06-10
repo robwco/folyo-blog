@@ -3,7 +3,9 @@
 // at 47.5em (18*47.5=855px) switch to a 12-column layout
 $xsmall-break: 320px;
 $small-break: 900px;
-$medium-break: 1300px;
+$medium-break: 1350px;
+
+$sidebar-width: 280px;
 
 @mixin xsmall(){
   // 0px to 320px

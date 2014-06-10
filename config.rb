@@ -1,6 +1,8 @@
 require 'active_support/inflector'
 require 'sanitize'
 
+@site_url = "http://blog.folyo.me"
+
 ###
 # Blog settings
 ###

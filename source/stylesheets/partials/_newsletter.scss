@@ -1,24 +1,5 @@
-.newsletter{
-  width: 240px;
-
-  @include xsmall-small{
-    position: static;
-  }
-  @include medium{
-    right: 40px; // +30px for margin
-    bottom: -300px;
-  }
-  @include large{
-    bottom: -300px;
-    left: 970px; // +30px for margin
-  }
-  @include medium-large{
-    position: fixed;
-    opacity: 0;
-    transform: rotate(-45deg);
-    @include single-transition(all, 500ms, 0ms, cubic-bezier(0.175, 0.885, 0.32, 1.275));
-  }
-
+.sidebar-widget{
+  width: $sidebar-width - 60px; // remove 30px on each side for padding
   line-height: 1.6;
   font-size: 16px;
   margin-bottom: 0;
@@ -30,16 +11,66 @@
   padding: 20px;
   @include box-shadow(0px 2px 3px black(0.3));
   color: $text;
-  .newsletter-title{
+
+  @include medium{
+    right: 30px; // +30px for margin
+  }
+  @include large{
+    left: $medium-break - $sidebar-width + 10; // +10px for margin
+  }
+  @include medium-large{
+    bottom: -300px; // hide newsletter
+    position: fixed;
+    opacity: 0;
+    transform: rotate(-45deg);
+    @include single-transition(all, 500ms, 0ms, cubic-bezier(0.175, 0.885, 0.32, 1.275));
+  }
+  .widget-title{
     margin-bottom: 5px;
     color: $text;
     font-size: 22px;
   }
-  .newsletter-intro{
+  .widget-intro{
     margin-bottom: 10px;
     font-size: 16px;
     line-height: 1.5;
-  }  
+  }
+  .widget-footer{
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  .show-widget &{
+    @include medium-large{
+      opacity: 1;
+      transform: rotate(0deg);
+      bottom: 30px;
+    }
+  } 
+}
+
+.widget-dismiss{
+  @include xsmall-small{
+    display: none;
+  }
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  display: block;
+  height: 24px;
+  width: 24px;
+  padding: 6px;
+  img{
+    display: block;
+    width: 100%;
+    filter: drop-shadow(0px 1px 1px rgba(0,0,0,0.25));
+  }
+}
+
+
+
+// Newsletter
+
+.widget-newsletter{ 
   form{
     @include cf;
   }
@@ -71,29 +102,63 @@
     line-height: 1.3;
     padding: 8px 12px;
     min-height: 38px;
-  }
-  .show-newsletter &{
-    @include medium-large{
-      opacity: 1;
-      transform: rotate(0deg);
-      bottom: 40px;
-    }
+  }  
+}
+
+// Share
+
+.widget-share{
+  display: none; // hide share widget by default
+  .widget-title{
+    margin-bottom: 15px;
   }
 }
-.newsletter-dismiss{
-  @include xsmall-small{
-    display: none;
-  }
-  position: absolute;
-  top: 2px;
-  right: 2px;
-  display: block;
-  height: 24px;
-  width: 24px;
-  padding: 6px;
-  img{
-    display: block;
-    width: 100%;
-    filter: drop-shadow(0px 1px 1px rgba(0,0,0,0.25));
-  }
+a.mt-share-inline-square-sm img {
+  width: 34px;
+  height: auto;
+  border: 0px;
+}
+a.mt-share-inline-square-sm {
+  display: inline-block;
+  width: 34px;
+  height: 34px;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
+  border-bottom-left-radius: 2px;
+  margin-right: 4px;
+}
+.mt-google:hover {
+  background-color: rgb(225, 95, 79);
+}
+.mt-google {
+  background-color: rgb(221, 75, 57);
+}
+.mt-linkedin:hover {
+  background-color: rgb(16, 135, 192);
+}
+.mt-linkedin {
+  background-color: rgb(14, 118, 168);
+}
+.mt-twitter:hover {
+  background-color: rgb(8, 187, 255);
+}
+.mt-twitter {
+  background-color: rgb(0, 172, 238);
+}
+.mt-facebook:hover {
+  background-color: rgb(66, 100, 170);
+}
+.mt-facebook {
+  background-color: rgb(59, 89, 152);
+}
+.mt-pinterest:hover {
+  background-color: rgb(221, 42, 48);
+}
+.mt-pinterest {
+  background-color: rgb(204, 33, 39);
+}
+
+.widget-nowidgets{
+  display: none;
 }

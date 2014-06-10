@@ -296,9 +296,6 @@
     @include small{
       margin: 0 $halfspacing $halfspacing 0;
     }
-    @include medium{
-      margin-right: $spacing;
-    }
   }
   .post-author-bio{
     margin-left: 100px;
