@@ -1,15 +1,16 @@
-%article.block.blog-summary
-  .post-summary
-    = partial("partials/meta", :locals => {post: post})
+%article.block.post-summary
+  .post-meta
+    .meta-date=post.date.strftime('%b %e, %Y')
 
-    - if post.data.thumb
-      .post-thumbnail
-        %a{:href => post.url}
-          %img.thumb{:src => "/images/blog/"+post.data.thumb}
-    .post-content
-      %h3.post-title
-        %a{:href => post.url}
-          =post.title
-      %p.post-excerpt
-        =Sanitize.clean(post.summary(100), Sanitize::Config::RESTRICTED)
-        %a{:href => post.url} → Read more
+  .post-content
+    %h3.post-title
+      %a{:href => post.url}
+        =post.title
+    %p.post-excerpt
+      =Sanitize.clean(post.summary(100), Sanitize::Config::RESTRICTED)
+      %a{:href => post.url} →&nbsp;Read&nbsp;more
+
+  - if post.data.thumb
+    .post-thumbnail
+      %a{:href => post.url}
+        %img.thumb{:src => "/images/blog/"+post.data.thumb}

@@ -55,22 +55,24 @@ $(function(){
 
   // progress animated svg
 
-  var progressPath = document.querySelector('.progress path');
-  var pathLength = progressPath.getTotalLength();
-  // Clear any previous transition
-  progressPath.style.transition = progressPath.style.WebkitTransition =
-    'none';
-  // Set up the starting positions
-  progressPath.style.strokeDasharray = pathLength + ' ' + pathLength;
-  progressPath.style.strokeDashoffset = pathLength;
-  // Trigger a layout so styles are calculated & the browser
-  // picks up the starting position before animating
-  progressPath.getBoundingClientRect();
-  // Define our transition
-  progressPath.style.transition = progressPath.style.WebkitTransition =
-    'stroke-dashoffset 300ms ease-in-out';
-  // Go!
-  
+  if(!!$('.progress path').length){
+    var progressPath = document.querySelector('.progress path');
+    var pathLength = progressPath.getTotalLength();
+    // Clear any previous transition
+    progressPath.style.transition = progressPath.style.WebkitTransition =
+      'none';
+    // Set up the starting positions
+    progressPath.style.strokeDasharray = pathLength + ' ' + pathLength;
+    progressPath.style.strokeDashoffset = pathLength;
+    // Trigger a layout so styles are calculated & the browser
+    // picks up the starting position before animating
+    progressPath.getBoundingClientRect();
+    // Define our transition
+    progressPath.style.transition = progressPath.style.WebkitTransition =
+      'stroke-dashoffset 300ms ease-in-out';
+    // Go!
+  }
+
   // --- Widgets ---
 
   // if newsletter has been submitted or dismissed 3 times or more, show share widget instead
@@ -101,21 +103,25 @@ $(function(){
     var height = $(document).height() - $(window).height();
     var percent = Math.round(scroll * 100 / height);
 
-    // update progress
-    var progress = pathLength - (scroll * pathLength / height);
-    progressPath.style.strokeDashoffset = progress;
+    // if progress indicator exists, update progress
+    if($('.progress path').length){
 
-    var text = percent+"% read";
-    if(percent >= 100){
-      text += " – good job!";
-    }else if(percent > 80){
-      text += " – almost there!";
-    }else if(percent > 60){
-      text += " – keep going…";
-    }else if(percent > 40){
-      text += " – doing great";
+      var progress = pathLength - (scroll * pathLength / height);
+      progressPath.style.strokeDashoffset = progress;
+    
+      var text = percent+"% read";
+      if(percent >= 100){
+        text += " – good job!";
+      }else if(percent > 80){
+        text += " – almost there!";
+      }else if(percent > 60){
+        text += " – keep going…";
+      }else if(percent > 40){
+        text += " – doing great";
+      }
+      $('.sidebar-indicator').text(text);
+
     }
-    $('.sidebar-indicator').text(text);
 
     // show/hide newsletter
     if(percent > 70 && showWidgetOnThisPage == true){

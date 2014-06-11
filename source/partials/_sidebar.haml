@@ -4,16 +4,18 @@
 .sidebar
   .sidebar-top
     %h2.sidebar-title.sidebar-block
-      %a{:href => "http://folyo.me", :target => "_blank"}
+      %a.sidebar-logo{:href => "http://folyo.me", :target => "_blank"}
         %span.s1 the
         %span.s2 Folyo 
         %span.s3 notebook
         - if is_post_page
           =partial("partials/progress")
-    - if is_post_page
-      .sidebar-percent
-        .sidebar-indicator 0% read
-    .sidebar-intro.sidebar-block Folyo helps you find the best freelance designers for your project.
+      - if is_post_page
+        .sidebar-percent
+          .sidebar-indicator 0% read
+  .sidebar-intro.sidebar-block
+    :markdown
+      Folyo helps you find the best freelance designers for your project. [Come check us out](http://folyo.me)!
   - if is_post_page
     .sidebar-widget
       =partial("partials/newsletter_widget")
