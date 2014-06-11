@@ -1,5 +1,7 @@
 .sidebar-widget{
-  width: $sidebar-width - 60px; // remove 30px on each side for padding
+  @include medium-large{
+    width: $sidebar-width - 60px; // remove 30px on each side for padding
+  }
   line-height: 1.6;
   font-size: 16px;
   margin-bottom: 0;
