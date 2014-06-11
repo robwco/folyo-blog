@@ -69,7 +69,7 @@ $(function(){
     progressPath.getBoundingClientRect();
     // Define our transition
     progressPath.style.transition = progressPath.style.WebkitTransition =
-      'stroke-dashoffset 300ms ease-in-out';
+      'stroke-dashoffset 300ms linear';
     // Go!
   }
 
