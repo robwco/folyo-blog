@@ -50,6 +50,14 @@ section{
       // max-height: 130px;
     }
   }
+  .meta-comments{
+    float: right;
+    font-variant: small-caps;
+    @include xsmall-small{
+      float: none;
+      text-align: center;
+    }   
+  }
   .post-content{
     padding-bottom: 0;
     // height: 190px;

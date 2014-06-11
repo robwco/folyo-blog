@@ -16,9 +16,12 @@
     %span.meta-author
       = author.display_name
     - if post.tags
-      in
+      in&nbsp;
       - post.tags.each_with_index do |tag, i|
         - if i > 0
           %span><
             ,&nbsp;
-        %a.meta-category.category{:href => tag_path(tag)}=tag.pluralize()
+        %a.meta-category.category{:href => tag_path(tag)}><
+          =tag.pluralize()
+        ,
+        %a.meta-comments{:href=> post.url+'#disqus_thread', 'data-disqus-identifier' => post.slug} No Comments

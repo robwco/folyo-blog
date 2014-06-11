@@ -36,6 +36,3 @@ pageable: true
     - page_articles.each do |post|
       =partial("partials/summary", :locals=>{post:post})
   =partial("partials/pagination", :locals =>{prev_page: prev_page, next_page: next_page, pagination_class: 'small'})
-
-
-

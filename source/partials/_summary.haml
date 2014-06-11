@@ -1,7 +1,7 @@
 %article.block.post-summary
   .post-meta
     .meta-date=post.date.strftime('%b %e, %Y')
-
+    %a.meta-comments{:href=> post.url+'#disqus_thread', 'data-disqus-identifier' => post.slug} No Comments
   .post-content
     %h3.post-title
       %a{:href => post.url}
