@@ -11,6 +11,7 @@ require 'rack/rewrite'
 # use Rack::SslEnforcer, :except_hosts => '0.0.0.0'
 
 use Rack::Rewrite do
+  r301 %r{^\/the-5-logo\/},'/the-5-dollar-logo/'
   r301 %r{^\/blog\/(.*)}, '/$1'
 end
 
