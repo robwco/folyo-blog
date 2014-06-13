@@ -66,6 +66,11 @@
             =next_article.title
             »
 
+  .post-newsletter.newsletter
+    %h4 Every week, learn something new about design.
+    %p.widget-intro Join our weekly newsletter and you'll also receive our guide on the <strong>9&nbsp;things to look for in a designer</strong>:
+    =partial("partials/newsletter_form")
+
   - if ENV["SHOW_COMMENTS"]
     .blog-comments
       %h4.blog-header Comments

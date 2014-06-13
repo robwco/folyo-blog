@@ -432,16 +432,22 @@ section{
   text-transform: uppercase;
 }
 .post-newsletter{
-  background:$light-yellow;
-  @include background(linear-gradient( 125deg, rgba(253,228,0,0.2) 0%, rgba(253,228,0,0.1) 90%));
-  border-bottom: 1px dotted $medium-bg;
-  @include small{
-    padding: $pspacing $halfspacing;
+  padding: $halfspacing;
+  border: 1px dotted #ccc;
+  // background: white(0.3);
+  h3, h4{
+    margin-bottom: 5px;
   }
-  @include medium{
-    padding: 60px;
+  p{
+    margin-bottom: 15px;
   }
-  position: relative;
+  .email{
+    width: 70%;
+    margin-right: 2%;
+  }
+  .submit{
+    background: $blue1;
+  }
 }
 .blog-comments{
   padding-top:60px;
