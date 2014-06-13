@@ -75,16 +75,16 @@ $(function(){
 
   // --- Widgets ---
 
-  // if newsletter has been submitted or dismissed 3 times or more, show share widget instead
-  
-  if($.cookie('newsletterSubmitted') || $.cookie('newsletterDismissed') >= 3){
-    $('.widget-newsletter').hide();
-    $('.widget-share').show();
-  }
-
-  // if share widget has been dismissed 3 times or more, show noWidgets widget instead
+  // if share widget has been dismissed 3 times or more, show newsletter widget instead
 
   if($.cookie('shareDismissed') >= 3){
+    $('.widget-share').hide();
+    $('.widget-newsletter').show();
+  }
+
+  // if newsletter widget has been submitted or dismissed 1 time or more, show noWidgets widget instead
+  
+  if($.cookie('newsletterSubmitted') || $.cookie('newsletterDismissed') >= 1){
     $('.widget-newsletter').hide();
     $('.widget-share').hide();
     $('.widget-nowidgets').show();

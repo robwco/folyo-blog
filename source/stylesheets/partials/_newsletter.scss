@@ -73,6 +73,8 @@
 // Newsletter
 
 .widget-newsletter{ 
+  display: none; // hide newsletter widget by default
+
   form{
     @include cf;
   }
@@ -110,7 +112,6 @@
 // Share
 
 .widget-share{
-  display: none; // hide share widget by default
   .widget-title{
     margin-bottom: 15px;
   }
