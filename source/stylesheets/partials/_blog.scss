@@ -220,7 +220,7 @@ section{
       margin-bottom: $halfspacing;
     }
   }
-  >p:first-child{
+  >p:first-of-type{
     @include small{
       font-size: 20px;
     }
@@ -376,6 +376,15 @@ section{
     float:right;
   }
 }*/
+.guest{
+  padding: 15px;
+  background: $lightgrey2;
+  p{
+    font-size: 15px;  
+    margin-bottom: 0;
+  }
+  margin-bottom: 30px;
+}
 .note{
   // background:$light-yellow;
   // @include background(linear-gradient( 125deg, rgba(253,228,0,0.2) 0%, rgba(253,228,0,0.1) 90%));

@@ -33,11 +33,13 @@
     %h4.section-header About the Author
     %img.portrait{:src => "/images/#{author.avatar}"}
     .post-author-bio
-      =author.bio
+      :markdown
+        #{author.bio}
       You can find him on 
       %a{:href => 'http://twitter.com/'+author.twitter} Twitter
-      and&nbsp;
-      %a{:href => author.gplus+'?rel=author'}> Google Plus
+      - if author.gplus
+        and&nbsp;
+        %a{:href => author.gplus+'?rel=author'}> Google Plus
       \.
 
 

@@ -4,17 +4,16 @@
   gplus: "https://plus.google.com/+SachaGreif/"
   avatar: "sacha-photo.jpg"
   bio: |
-    In addition to working on Folyo, <a href="http://sachagreif.com">Sacha Greif</a> also hacks on 
-    open-source app <a href="http://telesc.pe">Telescope</a>, 
-    and <a href="http://sidebar.io">Sidebar</a>, a design newsletter.
-- tom:
-  display_name: "Tom Coleman"
-  twitter: "tmeasday"
-  gplus: "https://plus.google.com/114949097276068693065"
-  avatar: "tom-photo.jpg"
+    In addition to working on Folyo, Sacha also hacks on 
+    open-source app [Telescope](http://telesc.pe), 
+    and [Sidebar](http://sidebar.io), a design newsletter.
+- dennis:
+  display_name: "Dennis Field"
+  twitter: "dennis_field"
+  gplus: ""
+  avatar: "photo-dennis.jpg"
   bio: |
-    <a href="http://tom.thesnail.org">Tom Coleman</a> is part of <a href="http://percolatestudio.com">Percolate Studio</a>, 
-    a development shop with a focus on quality and user experience. 
-    As the co-creator of <a href="https://github.com/oortcloud/meteorite">Meteorite</a> 
-    and <a href="http://atmosphere.meteor.com">Atmosphere</a>, 
-    he's also one of the most active contributors to Meteor's open-source ecosystem.
+    [Dennis Field](http://iamdennisfield.com/) is a web designer, 
+    author and the co-founder of Greenline Creative. 
+    His passion is [helping other designers reach their goals](http://iamdennisfield.com/learn.html), and 
+    he’s currently working on his first book, [The Designer’s Handbook](http://iamdennisfield.com/the-designers-handbook/). 
