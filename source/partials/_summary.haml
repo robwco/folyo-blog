@@ -6,7 +6,7 @@
     %h3.post-title
       %a{:href => post.url}
         =post.title
-    %p.post-excerpt
+    .post-excerpt
       =Sanitize.clean(post.summary(100), Sanitize::Config::RESTRICTED)
       %a{:href => post.url} →&nbsp;Read&nbsp;more
 

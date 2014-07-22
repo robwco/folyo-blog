@@ -24,6 +24,12 @@
       %h1.post-title{:itemprop => "name"}=post.data.title
 
       .post-content
+
+        - if post.data.guest
+          .post-guest
+            :markdown
+              #{post.data.guest}
+
         =find_and_preserve do
           =yield
     .post-share
@@ -42,6 +48,10 @@
         %a{:href => author.gplus+'?rel=author'}> Google Plus
       \.
 
+  .post-newsletter.newsletter.post-block
+    %h4 Every week, learn something new about design.
+    %p.widget-intro Join our weekly newsletter and you'll also receive our guide on the <strong>9&nbsp;things to look for in a designer</strong>:
+    =partial("partials/newsletter_form")
 
   / .blog-featured
   /   %h4.blog-header Read This Next
@@ -68,10 +78,6 @@
             =next_article.title
             »
 
-  .post-newsletter.newsletter
-    %h4 Every week, learn something new about design.
-    %p.widget-intro Join our weekly newsletter and you'll also receive our guide on the <strong>9&nbsp;things to look for in a designer</strong>:
-    =partial("partials/newsletter_form")
 
   - if ENV["SHOW_COMMENTS"]
     .blog-comments

@@ -68,6 +68,9 @@ section{
     .post-title{
       font-size: 30px;
     }
+    .post-excerpt{
+      font-size: 20px;
+    }
   }
   .blog-archive &{
     @include medium-large{
@@ -344,7 +347,6 @@ section{
 .post-author{
   position: relative;
   border-bottom: 1px dotted $medium-bg;
-  padding: $spacing 0;
 
   // background:$super-light-bg;
   // margin-bottom:60px;
@@ -376,7 +378,7 @@ section{
     float:right;
   }
 }*/
-.guest{
+.post-guest{
   padding: 15px;
   background: $lightgrey2;
   p{

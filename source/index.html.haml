@@ -13,7 +13,7 @@ pageable: true
       %span Featured Article
     .blog-articles
       - blog.articles.select{|chapter| chapter.data.has_key?('featured') && chapter.data.featured}.take(1).each do |post|
-        %article.block.post-summary
+        %article.block.post-summary.post-featured
           - if post.data.thumb
             .post-thumbnail
               %a{:href => post.url}
@@ -22,7 +22,7 @@ pageable: true
             %h3.post-title
               %a{:href => post.url}
                 =post.title
-            %p.post-excerpt
+            .post-excerpt
               =Sanitize.clean(post.summary(100), Sanitize::Config::RESTRICTED)
               %a{:href => post.url} →&nbsp;Read&nbsp;more
 
