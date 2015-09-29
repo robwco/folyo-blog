@@ -8,7 +8,16 @@
     open-source app [Telescope](http://telesc.pe), 
     and [Sidebar](http://sidebar.io), a design newsletter.
 - dennis:
-  display_name: "Dennis Field"
+  display_name: "Rob Williams"
+  twitter: "letsworkshop"
+  gplus: "https://plus.google.com/+RobertWilliamsWorkshop/"
+  avatar: "rob.png"
+  bio: |
+    In addition to running Folyo, Robert is also
+    a web software designer and founder of [Workshop](http://letsworkshop.com), a 
+    small lead-gen service for ambitious freelancers.
+- rob:
+  display_name: "Robert Williams"
   twitter: "dennis_field"
   gplus: "https://plus.google.com/+DennisField/"
   avatar: "photo-dennis.jpg"
@@ -17,12 +26,4 @@
     author and the co-founder of Greenline Creative. 
     His passion is [helping other designers reach their goals](http://iamdennisfield.com/learn.html), and 
     he’s currently working on his first book, [The Designer’s Handbook](http://iamdennisfield.com/the-designers-handbook/). 
-- rob:
-  display_name: "Rob Williams"
-  twitter: "letsworkshop"
-  gplus: "https://plus.google.com/+RobertWilliamsWorkshop/"
-  avatar: "rob.png"
-  bio: |
-    In addition to running Folyo, Robert is also
-    a web software designer and founder of [Workshop](http://letsworkshop.com), a 
-    small lead-gen service for ambitious freelancers. 
+
